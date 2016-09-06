@@ -49,7 +49,7 @@ Herein lies the core problem of this article. If a proxy is to be used for cachi
 ##### Hop-by-hop security
 The first pattern, _hop-by-hop_ security, visualized in Figure 1,is to terminate the channel security session in the caching node, effectively dividing the security in two parts. One part from the sender to the caching node and one part from the caching node to the receiver. 
 
-![Hop-by-hop security]({{ site.url }}/images/hbh_700.png)
+![Hop-by-hop security]({{ site.url }}/images/hbh_900.png)
 
 **Figure 1**
 
@@ -60,7 +60,7 @@ Hop-by-hop security can only be relied on if all partners are trusted. This is n
 ##### End-to end security
 The second pattern, _end-to-end_ security, visualised in Figure 2, is to not terminate the session at the proxy but instead keep the channel security enabled through the proxy. This thwarts the possibility for the proxy to attack the session in a meaningful way since it prevents it from reading the data or changing it without detection. 
 
-![End-to-end security]({{ site.url }}/images/e2e_700.png)
+![End-to-end security]({{ site.url }}/images/e2e_900.png)
 
 **Figure 2**
 
