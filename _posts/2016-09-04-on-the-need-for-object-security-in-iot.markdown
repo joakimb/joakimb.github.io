@@ -4,7 +4,7 @@ title: "On the need for object security in IoT"
 date: 2016-09-04 12:00:00 +0200
 ---
 
-_The Internet of Things (IoT) is coming. With it comes new security challenges from the constrained nature of IoT devices. This blog post discusses how information security is affected by the constrained and asynchronus nature of IoT. Much of the text is an adaptaion from the master thesis [Compact Object Security for the Internet of Things](http://lup.lub.lu.se/student-papers/record/8887542) written by me and Martin Gunnarsson [TODO reference] in 2016._
+_The Internet of Things (IoT) is coming. With it comes new security challenges from the constrained nature of IoT devices. This blog post discusses how information security is affected by the constrained and asynchronus nature of IoT. Much of the text is an adaptaion from the master thesis [Compact Object Security for the Internet of Things](http://lup.lub.lu.se/student-papers/record/8887542) written by me and [Martin Gunnarsson](mailto:martin.gunnarsson.782@student.lu.se) in 2016._
 
 ### Introduction
 Let‘s start by talking about what IoT really means. IoT is a wide term used to describe anything from industrial control systems to smart homes. IoT devices are thought of ranging from Raspberry PIs to  NFC chips. Everybody has their own view. Much of the challenges associated with IoT devices springs from the nature of [_constrained nodes_](https://tools.ietf.org/html/rfc7228#section-2.1). These nodes, or devices, are constrained in the sense that they have low processing power, a small amount of RAM and often operate on battery power. 
@@ -45,18 +45,22 @@ The core problems with security in IoT is that Application traffic is asynchrono
 #### Consequences of using traditional methods
 Herein lies the core problem of this article. If a proxy is to be used for caching data, and channel security is used, the security can follow two patterns. Hop-by-hop or end-to-end security.
 
-![Hop-by-hop security](images/hbh.pdf)
-![End-to-end security](images/e2e.pdf)
 
 ##### Hop-by-hop security
-The first pattern, _hop-by-hop_ security, visualized in Figure [TODO reference],is to terminate the channel security session in the caching node, effectively dividing the security in two parts. One part from the sender to the caching node and one part from the caching node to the receiver. 
+The first pattern, _hop-by-hop_ security, visualized in Figure 1,is to terminate the channel security session in the caching node, effectively dividing the security in two parts. One part from the sender to the caching node and one part from the caching node to the receiver. 
+
+![Hop-by-hop security]({{ site.url }}/images/hbh_500.png)
+**Figure 1**
 
 Doing this forces the data to be decrypted at the caching node; the caching node needs to re-encrypt the plaintext for the receiver. The data integrity and confidentiality will therefore not be end-to-end between the client and server, but hop-by-hop from client to proxy and from proxy to server. 
 
 Hop-by-hop security can only be relied on if all partners are trusted. This is not a good assumption for a secure and robust system. The possibility of malicious nodes opens up for both passive eavesdropping attacks and active attacks such as man-in-the-middle attacks on the communication. These kind of attacks are a very real threat and there has been countless examples of them. Hop-by-hop security is sometimes also referred to as point-to-point security. 
 
 ##### End-to end security
-The second pattern, _end-to-end_ security, visualised in Figure [TODO ref], is to not terminate the session at the proxy but instead keep the channel security enabled through the proxy. This thwarts the possibility for the proxy to attack the session in a meaningful way since it prevents it from reading the data or changing it without detection. 
+The second pattern, _end-to-end_ security, visualised in Figure 2, is to not terminate the session at the proxy but instead keep the channel security enabled through the proxy. This thwarts the possibility for the proxy to attack the session in a meaningful way since it prevents it from reading the data or changing it without detection. 
+
+![End-to-end security]({{ site.url }}/images/e2e_500.png)
+**Figure 2**
 
 True end-to-end security is thereby obtained but important functionality is also lost. With channel security used for end-to-end encryption, it is all or nothing; all data originating from above the session layer has to be secured. The inability for a proxy to change or read anything from the transport layer and higher layers is not without negative consequences. A proxy often carries a lot of functionality on higher layers that is broken by end-to-end channel security. For example, a CoAP caching proxy can not cache any data for connections that tunnels through the proxy using channel security. CoAP is a protocol designed to work closely with proxies; the protocol will be crippled without the proxying functionality.
 
@@ -71,8 +75,6 @@ In conclusion, object security enables end-to-end security without preventing pr
 Another important aspect when comparing object security and channel security for constrained devices is the network overhead produced by the different technologies. The overhead in a session based security protocol is composed of both the handshake and the overhead that the protocol produces when encrypting and integrity protecting data. 
 
 In an object based security protocol, the encryption parameters can be pre established (I will discuss Perfect Forward Secrecy in a coming blog post), in which case the overhead consists solely of the overhead produced when encrypting and integrity protecting, no handshake takes place. 
-
-[TODO perfect forward secrecy]
 
 ### Conclusion and proposed solution
 This blog post has argued that using channel security protocols, such as DTLS, for constrained nodes is often not the best solution. Protocols based on object security can often be a much better fit. 
