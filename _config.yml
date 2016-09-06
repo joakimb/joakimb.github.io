@@ -1,6 +1,6 @@
 # Site settings
 title:       Significant Bits
-email:       b.joakim+sigbits@gmail.com 
+email:       sigbits@gmail.com 
 author:      Joakim Brorsson
 description: "A blog about information security."
 baseurl:     ""
