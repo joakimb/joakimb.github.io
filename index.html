@@ -16,6 +16,7 @@ layout: default
             {% else %}
               {{ post.excerpt }}
             {% endif %}
+            <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">[Continue reading...]</a>
           </p>
         </div>
       {% endfor %}
