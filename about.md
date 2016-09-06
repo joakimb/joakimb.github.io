@@ -6,7 +6,7 @@ tags: about
 ---
 
 
-![I‘s me, Joakim!]({{ site.url }}/images/my_face_500.png)
+![I‘s me, Joakim!]({{ site.url }}/images/my_face_230.png)
 
 Hi!
 
