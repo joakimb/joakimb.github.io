@@ -47,7 +47,7 @@ Herein lies the core problem of this article. If a proxy is to be used for cachi
 
 
 ##### Hop-by-hop security
-The first pattern, _hop-by-hop_ security, visualized in Figure 1,is to terminate the channel security session in the caching node, effectively dividing the security in two parts. One part from the sender to the caching node and one part from the caching node to the receiver. 
+The first pattern, _hop-by-hop_ security, visualized in Figure 1, is to terminate the channel security session in the caching node, effectively dividing the security in two parts. One part from the sender to the caching node and one part from the caching node to the receiver. 
 
 ![Hop-by-hop security]({{ site.url }}/images/hbh_900.png)
 
