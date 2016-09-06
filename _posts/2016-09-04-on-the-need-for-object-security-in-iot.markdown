@@ -50,6 +50,7 @@ Herein lies the core problem of this article. If a proxy is to be used for cachi
 The first pattern, _hop-by-hop_ security, visualized in Figure 1,is to terminate the channel security session in the caching node, effectively dividing the security in two parts. One part from the sender to the caching node and one part from the caching node to the receiver. 
 
 ![Hop-by-hop security]({{ site.url }}/images/hbh_700.png)
+
 **Figure 1**
 
 Doing this forces the data to be decrypted at the caching node; the caching node needs to re-encrypt the plaintext for the receiver. The data integrity and confidentiality will therefore not be end-to-end between the client and server, but hop-by-hop from client to proxy and from proxy to server. 
@@ -60,6 +61,7 @@ Hop-by-hop security can only be relied on if all partners are trusted. This is n
 The second pattern, _end-to-end_ security, visualised in Figure 2, is to not terminate the session at the proxy but instead keep the channel security enabled through the proxy. This thwarts the possibility for the proxy to attack the session in a meaningful way since it prevents it from reading the data or changing it without detection. 
 
 ![End-to-end security]({{ site.url }}/images/e2e_700.png)
+
 **Figure 2**
 
 True end-to-end security is thereby obtained but important functionality is also lost. With channel security used for end-to-end encryption, it is all or nothing; all data originating from above the session layer has to be secured. The inability for a proxy to change or read anything from the transport layer and higher layers is not without negative consequences. A proxy often carries a lot of functionality on higher layers that is broken by end-to-end channel security. For example, a CoAP caching proxy can not cache any data for connections that tunnels through the proxy using channel security. CoAP is a protocol designed to work closely with proxies; the protocol will be crippled without the proxying functionality.
