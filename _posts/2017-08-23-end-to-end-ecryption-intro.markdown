@@ -191,6 +191,8 @@ https://support.office.com/en-us/article/Office-365-Protected-Message-Viewer-Por
 
 The fact that you need to trust their privacy statement and dont have access to end-to-end encryption makes for a vulnerable security model.
 
+Microsofts security model seems to be that you can not trust your mail recipients system with the data sent to them, but you can certainly trust microsoft with it.
+
 #### whatsapp
 
 
