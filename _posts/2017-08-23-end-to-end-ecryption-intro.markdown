@@ -160,7 +160,7 @@ End-to-end data security on the other hand protects the data itself, not the inf
 ### Signal
 
 
-![Comparison]({{ site.url }}/images/comparison.png)
+![E@EE Comparison]({{ site.url }}/images/comparison.png)
 
 **E2EE Comparison**
 
