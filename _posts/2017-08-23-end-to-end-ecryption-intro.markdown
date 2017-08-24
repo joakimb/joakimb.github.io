@@ -102,7 +102,11 @@ Threats are also not only external. Insiders are also potential threats.
 With the expansion of the enterprise into the cloud, this becomes an imortant aspect, since you are essentially making the cloud provider an insider if you dont use a proper security model.
 
 ### A parable
-apartment keys metaphor
+
+![Apartment keys parable]({{ site.url }}/images/apartments.png)
+
+**Figure 1**
+
 
 ## The lineup (what are my choices)
 
@@ -131,13 +135,19 @@ With more complex systems, you involve servers aswell. Think of your phone line.
 
 The next step is letting the server act as an intermediate storage unit. Here the clients does not need to be online at the same time. Think of a chat system. In a chat system, one can send a message, turn off your smartphone, and still expect the message to be delivered. This is because the messages are cached at the intermediate server. A system of this type can be classified as asynchronous.
 
-### traditional security
+To wrap up, the core 2 carchteristicts in this context is:
 
-Tradition security makes a clear distinction between securing connections and devices such as servers and clients.
+ * Are there both clients and servers?
+ * Is the communication syncronous or asynchronous.
 
-tls, vpn, firewalls, IDS
+### Traditional security
 
+Traditional security makes a clear distinction between securing connections and devices such as servers and clients.
+The focus here is to secure every part of the system. We have one type of security for the clients, one for the connection between the clients and the servers, and one for the servers. Common techniques here are: TLS, VPN, firewalls, IDS:s etc.
 
+These tools are very good for their purpose, which is protecting the infrastucture. But as soon as we have systems where you use third party providers, you should consider using end-to-end security instead.
+
+### End-to-end security
 
 ### HYKER
 
