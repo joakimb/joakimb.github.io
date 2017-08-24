@@ -110,7 +110,7 @@ permalink:    pretty
 paginate:     4
 sass:
   compressed: true
-plugins:
+gems:
   - jekyll-paginate
   - jekyll-sitemap
 # https://github.com/jekyll/jekyll/issues/2938
