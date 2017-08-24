@@ -21,7 +21,7 @@ Using the cloud means bringin in more parties in the system, which has to be tru
 
 People should not need to fully trust the service provider and all the accopanyuing parties with their sensitive data. This is where encryption comes in to play.
 
-![Cloud History]({{ site.url }}/images/cloudhistory.png)
+![Cloud History]({{ site.url }}/images/cloudhist.png)
 
 **Cloud History**
 
