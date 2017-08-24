@@ -153,10 +153,16 @@ These tools are very good for their purpose, which is protecting the infrastuctu
 
 ### End-to-end security
 
+End-to-end data security on the other hand protects the data itself, not the infrastructure. 
+
 ### HYKER
 
 ### Signal
 
+
+![Comparison]({{ site.url }}/images/comparison.png)
+
+**E2EE Comparison**
 
 # Briteback
 
