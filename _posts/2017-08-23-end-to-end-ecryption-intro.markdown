@@ -172,5 +172,25 @@ fill in yourselves
 
 ## briteback security model
 
+HYKER model 
+
 ## competition security model
-slack, crypho, microsoft, whatsappj
+
+#### slack
+
+#### microsoft
+
+Microsoft uses the traditional security model of hop-by-hop encryption, separating connection security and security for data at rest.
+
+A more detailed description is available at:
+https://technet.microsoft.com/sv-se/library/dn569285.aspx
+https://products.office.com/en/exchange/office-365-message-encryption
+
+But basically microsoft can read your data. They know this, and therefore issued this privacy statement:
+https://support.office.com/en-us/article/Office-365-Protected-Message-Viewer-Portal-privacy-statement-05b2e7e4-230e-48a9-802c-4cafac0d7c9d?ui=en-US&rs=en-US&ad=US
+
+The fact that you need to trust their privacy statement and dont have access to end-to-end encryption makes for a vulnerable security model.
+
+#### whatsapp
+
+
