@@ -21,6 +21,10 @@ Using the cloud means bringin in more parties in the system, which has to be tru
 
 People should not need to fully trust the service provider and all the accopanyuing parties with their sensitive data. This is where encryption comes in to play.
 
+![Cloud History]({{ site.url }}/images/cloudhistory.png)
+
+**Cloud History**
+
 ## The how (how is security implemented)
 
 
@@ -105,7 +109,7 @@ With the expansion of the enterprise into the cloud, this becomes an imortant as
 
 ![Apartment keys parable]({{ site.url }}/images/apartments.png)
 
-**Figure 1**
+**Apartment Keys Parable**
 
 
 ## The lineup (what are my choices)
