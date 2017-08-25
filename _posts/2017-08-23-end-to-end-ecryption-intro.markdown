@@ -1,15 +1,25 @@
 ---
 layout: post
-title: "How to classify different security solutions for your needs"
+title: "Security issues with cloud based enterprise communication"
 date: 2017-08-04 12:00:00 +0200
 ---
-
 
 ## Introduction
 
 Security is, and always has been, a basic requirement for quality products. It has been part of every serious system since the start of networked computing in the late 1900:s and is now part of every mans life with the moving of some parts of our lives to the internet. However, it has always been hidden under the surface. It has not been publicly advertised by neither the media or the system builders.
 
 The situation has changed. Nowadays, security breaches is front page news on the most respected newspapers and system builders openly discuss their securiy model as a part of marketing.
+
+## Secure enterprise communication
+
+### The data
+
+The first thing to realise when talking about security in enterprise communication is that you are dealing with sensitive data.
+The messages and documents your employees send to eachother very often contain things that are sensitive to either the company or the employee.
+Obvious examples are: business plans, information aquired under NDA, maternity leaves and salary information.
+
+This data is not often only a bummer to leak, but they are also often regulated in law.
+GDPR and stock market information regulations comes to mind.
 
 ## The why (the cause for the new situation)
 
