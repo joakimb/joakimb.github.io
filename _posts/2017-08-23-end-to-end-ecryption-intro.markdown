@@ -8,7 +8,7 @@ date: 2017-08-04 12:00:00 +0200
 
 Security is, and always has been, a basic requirement for quality products. It has been part of every serious system since the start of networked computing in the late 1900:s and is now part of every mans life with the moving of some parts of our lives to the internet. However, it has always been hidden under the surface. It has not been publicly advertised by neither the media or the system builders.
 
-The situation has changed. Nowadays, security breaches is front page news on the most respected newspapers and system builders openly discuss their securiy model as a part of marketing.
+The situation has changed. Nowadays, security breaches is front page news on the most respected newspapers and system builders openly discuss their security model as a part of marketing.
 
 ## Secure enterprise communication
 
@@ -20,6 +20,14 @@ Obvious examples are: business plans, information aquired under NDA, maternity l
 
 This data is not often only a bummer to leak, but they are also often regulated in law.
 GDPR and stock market information regulations comes to mind.
+
+### How the data is secured
+
+All security is based on conditionally selecting trusted parts of a system. To enforce the security - i.e. the exclusion of untrusted entities - we use the tools, rules and cryptography.
+Rules are prone to human error, or malicious intents.
+Cryptography on the other hand is highly resistant to these flaws.
+
+beskriv hur hbh e regler och e2e e krypto
 
 ## The why (the cause for the new situation)
 
