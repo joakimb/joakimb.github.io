@@ -49,19 +49,29 @@ They all acheive fully secure E2E, but with important differences making them su
 
 ## The Briteback security model
 
-## the briteback aim
+Briteback aims to be the optimal communication tool for enterprises, taking all of their needs into consideration.
+A modern enterprise needs a smooth communication sulution integrating several different ways of communication.
+It also needs the information shared via this tool to be fully secure from leaks and changes.
+Confidentiality, integrity and authenticated origins of information are core values for enterprises.
 
-fill in yourselves
 
-## briteback security model
+### Briteback security model
 
-HYKER model 
+For the above reasons, Briteback has integrated full end-to-end security in our services.
 
-## competition security model
+The chosen service for end-to-end security is [HYKER](https://hyker.io), a Swedish security company dealing exclusively with end-to-end cryptogrphy.
+The pros and cons of this security model is described in further detail below, but the key takeaways is that regardless of if any Briteback or HYKER sevices are hacked or malicious, the customer data remains fully out of reach for both attackers and Briteback and HYKER themselves.
 
-#### slack
+This is a very strong security statement.
+For an enterprise, it is highly preferrable to having to trust the sincerity and continuous server maintenece of external organizations.
 
-#### microsoft
+### Briteback competition security models
+
+#### Slack
+
+
+
+#### Microsoft Office 365
 
 Microsoft uses the traditional security model of hop-by-hop encryption, separating connection security and security for data at rest.
 
@@ -76,7 +86,7 @@ The fact that you need to trust their privacy statement and dont have access to 
 
 Microsofts security model seems to be that you can not trust your mail recipients system with the data sent to them, but you can certainly trust microsoft with it.
 
-
+#### MS-teams
 
 
 ## A deeper cryptographical intro
