@@ -44,8 +44,8 @@ Additionally, you need to secure the data itself.
 If the data is encrypted at the message sender, and the decryption key is only made available to the intended recipient, you acheive what is called __end-to-end__ security (E2E).
 This type of security eliminates the need to fully trust evey part of the system, making for a reduced attack surface and brings data ownership back from the system to the data producer.
 
-There are many technologies available for E2E, e.g. HYKER, PGP, Signal and OSCOAP. 
-They all acheive fully secure E2E, but with important difference making them suited for different purposes.
+There are many technologies available for E2E, e.g. [HYKER](https://hyker.io), [PGP](http://openpgp.org), [Signal](https://whispersystems.org) and [OSCoAP](https://tools.ietf.org/html/draft-selander-ace-object-security-05). 
+They all acheive fully secure E2E, but with important differences making them suited for different purposes.
 
 ## The Briteback security model
 
