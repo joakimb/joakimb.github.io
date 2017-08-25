@@ -18,7 +18,7 @@ The first thing to realise when talking about security in enterprise communicati
 The messages and documents your employees send to eachother very often contain things that are sensitive to either the company or the employee.
 Obvious examples are: business plans, information aquired under NDA, maternity leaves and salary information.
 
-This data is not often only a bummer to leak, but they are also often regulated in law.
+This data is often not only embarrasing and damaging for business to leak, it is also often regulated in law.
 GDPR and stock market information regulations comes to mind.
 
 ### How the data is secured
@@ -27,7 +27,59 @@ All security is based on conditionally selecting trusted parts of a system. To e
 Rules are prone to human error, or malicious intents.
 Cryptography on the other hand is highly resistant to these flaws.
 
-beskriv hur hbh e regler och e2e e krypto
+#### Securing every part of the system
+
+Most people that have come in contact with computer security have heard about the common techniques for connection security and end node security such as TLS and firewalls.
+
+These technologies are very good technologies, but the purpose is to secure the infrastructure, piece by piece, or as we call it in the industry, __hop-by-hop__ security.
+This means that when for example sending an email, the email is encrypted in transit and in storage, but the parties delivering the mail are able to decrypt the message.
+This is a weaknesses.
+There can be vulnerable parts of the chain; or some part of the chain can be malicious.
+Traditional security models like this are good for securing infrastructure that you own, it is not designed to protect data which does not explicitly belong to the system owner.
+
+#### Securing the data at the end nodes
+
+When you do not control 100% of the infrastucrure - as when using cloud services - or the data does not belong to the system - as in a chat service or a mail system, protecting the infrastructure is not enough.
+Additionally, you need to secure the data itself.
+If the data is encrypted at the message sender, and the decryption key is only made available to the intended recipient, you acheive what is called __end-to-end__ security (E2E).
+This type of security eliminates the need to fully trust evey part of the system, making for a reduced attack surface and brings data ownership back from the system to the data producer.
+
+There are many technologies available for E2E, e.g. HYKER, PGP, Signal and OSCOAP. 
+They all acheive fully secure E2E, but with important difference making them suited for different purposes.
+
+## The Briteback security model
+
+## the briteback aim
+
+fill in yourselves
+
+## briteback security model
+
+HYKER model 
+
+## competition security model
+
+#### slack
+
+#### microsoft
+
+Microsoft uses the traditional security model of hop-by-hop encryption, separating connection security and security for data at rest.
+
+A more detailed description is available at:
+https://technet.microsoft.com/sv-se/library/dn569285.aspx
+https://products.office.com/en/exchange/office-365-message-encryption
+
+But basically microsoft can read your data. They know this, and therefore issued this privacy statement:
+https://support.office.com/en-us/article/Office-365-Protected-Message-Viewer-Portal-privacy-statement-05b2e7e4-230e-48a9-802c-4cafac0d7c9d?ui=en-US&rs=en-US&ad=US
+
+The fact that you need to trust their privacy statement and dont have access to end-to-end encryption makes for a vulnerable security model.
+
+Microsofts security model seems to be that you can not trust your mail recipients system with the data sent to them, but you can certainly trust microsoft with it.
+
+
+
+
+## A deeper cryptographical intro
 
 ## The why (the cause for the new situation)
 
@@ -46,13 +98,6 @@ People should not need to fully trust the service provider and all the accopanyu
 ## The how (how is security implemented)
 
 
-### securing every part of the system
-
-Most people that has come in contact with computer security have heard about the common techniques for connection security and end node security
-
-these are very good technologies. but the purpose is to secure the infrastructure, piece by piece, or as we call it in the industry, hop-by-hop security.
-This means that when for example sending an email, the email is encrypted in transit and in storage, but the parties delivering the mail are able to decrypt the message. This ability allows for weaknesses, either if there is a vulnerability at some part of the chain. or if some part of the chain is malicious.
-
 #### Email example for HBH
 
 1. sender creates email and encrypts it for her email server.
@@ -63,13 +108,6 @@ This means that when for example sending an email, the email is encrypted in tra
 here, the security is divided in to several steps, and the email is vulnerable everytime is decrypted and reencrypted.
 it is also a system with 4 parties. The sender, the receiver, the senders email service and the receivers email service.
 All of these parts needs to be trusted (we wont get into the email services thrird party services since it would be too complex, but basically, those also needs to be trusted.)
-
-### securing the data at the end nodes
-
-securing your infrasturcure is essential for quality, but when the users of a system should not have to fully trust the entire system, here we need the alternative to hop-by-hop, i.e. end-to-end sedcurity.
-In end-to-end security, you encrypt for the final recipient at the first step. the data can be delivered through an arbitrary
-
-There are many technologies available for e2e, e.g. HYKER, PGP, Signal and OSCOAP. They all acheive fully secure e2e, but with important difference making them suited for different purposes.
 
 oscoap
 pgp
@@ -181,36 +219,6 @@ End-to-end data security on the other hand protects the data itself, not the inf
 ![E@EE Comparison]({{ site.url }}/images/comparison.png)
 
 **E2EE Comparison**
-
-# Briteback
-
-## the briteback aim
-
-fill in yourselves
-
-## briteback security model
-
-HYKER model 
-
-## competition security model
-
-#### slack
-
-#### microsoft
-
-Microsoft uses the traditional security model of hop-by-hop encryption, separating connection security and security for data at rest.
-
-A more detailed description is available at:
-https://technet.microsoft.com/sv-se/library/dn569285.aspx
-https://products.office.com/en/exchange/office-365-message-encryption
-
-But basically microsoft can read your data. They know this, and therefore issued this privacy statement:
-https://support.office.com/en-us/article/Office-365-Protected-Message-Viewer-Portal-privacy-statement-05b2e7e4-230e-48a9-802c-4cafac0d7c9d?ui=en-US&rs=en-US&ad=US
-
-The fact that you need to trust their privacy statement and dont have access to end-to-end encryption makes for a vulnerable security model.
-
-Microsofts security model seems to be that you can not trust your mail recipients system with the data sent to them, but you can certainly trust microsoft with it.
-
 #### whatsapp
 
 
