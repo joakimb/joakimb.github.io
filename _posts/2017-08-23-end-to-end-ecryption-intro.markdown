@@ -76,17 +76,26 @@ For an enterprise, it is highly preferrable to having to trust the sincerity and
 Microsoft uses the traditional security model of hop-by-hop encryption, separating connection security and security for data at rest.
 
 A more detailed description is available at:
-https://technet.microsoft.com/sv-se/library/dn569285.aspx
-https://products.office.com/en/exchange/office-365-message-encryption
+[Office 365 security](https://products.office.com/en/exchange/office-365-message-encryption)
+[Office 365 security FAQ](https://technet.microsoft.com/sv-se/library/dn569285.aspx)
 
-But basically microsoft can read your data. They know this, and therefore issued this privacy statement:
-https://support.office.com/en-us/article/Office-365-Protected-Message-Viewer-Portal-privacy-statement-05b2e7e4-230e-48a9-802c-4cafac0d7c9d?ui=en-US&rs=en-US&ad=US
+The gist of the content privided on those pages is that microsoft can read your data, but that they are trustworthy and that you should therefore not care.
+Since they know that they are in full control of their coustomers data, Microsoft issued issued this privacy statement:
+[Privacy Statement](https://support.office.com/en-us/article/Office-365-Protected-Message-Viewer-Portal-privacy-statement-05b2e7e4-230e-48a9-802c-4cafac0d7c9d?ui=en-US&rs=en-US&ad=US)
 
-The fact that you need to trust their privacy statement and dont have access to end-to-end encryption makes for a vulnerable security model.
+The fact that you need to trust their privacy statement and do not have access to end-to-end encryption makes for a vulnerable security model.
 
-Microsofts security model seems to be that you can not trust your mail recipients system with the data sent to them, but you can certainly trust microsoft with it.
+The [video](https://www.youtube.com/watch?v=sAaO_maYowY) talks about that microsoft is a supplier which you can trust. They mention encryption in transit and encryption at rest. They also say that they do not use your data, and that you __should not have to worry anout that__. This begs the question: why does Microsoft not offer E2E encryption? 
+
+With Microsofts security model, they are forcing their customers to worry about such things. They specifically state that microsoft engineers are the only ones that have access to your data, no one else. Why should you need to trust the engineers at microsoft? Microsofts entire security argument is based around "Do not trust anybody but us". It is the "but us" part that is weak. Strategies based on "dont trust anybody, not even us" are much stronger.
+
+So dont trust words, trust actions. Trust proper encryption rather than privacy statements.
 
 #### MS-teams
+MS-teams is security wise equivalent to Office 365. It is new set of new communication tools, but they are based upon Office 365.
+
+"Microsoft Teams is built upon Office 365 Groups and provides a new way to access shared assets for an Office 365 Group." 
+https://support.office.com/en-us/article/Frequently-asked-questions-about-Microsoft-Teams-–-Admin-Help-05cbe533-2181-4e95-a4b0-52cd7695fafc
 
 
 ## A deeper cryptographical intro
