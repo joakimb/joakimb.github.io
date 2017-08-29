@@ -67,9 +67,6 @@ For an enterprise, it is highly preferrable to having to trust the sincerity and
 
 ### Briteback competition security models
 
-#### Slack
-
-
 
 #### Microsoft Office 365
 
@@ -97,6 +94,18 @@ MS-teams is security-wise equivalent to Office 365. It is new set of new communi
 "Microsoft Teams is built upon Office 365 Groups and provides a new way to access shared assets for an Office 365 Group." 
 https://support.office.com/en-us/article/Frequently-asked-questions-about-Microsoft-Teams-–-Admin-Help-05cbe533-2181-4e95-a4b0-52cd7695fafc
 
+
+#### Slack
+
+Slack boasts about their compliance certifications on their [security page](https://slack.com/security). They also talk about their various security features, such as SAML-based SSO. This is all good. Their Achilles' heel is the same as Microsofts though. They focus on hop-by-hop encryption through encryption in transit and encryption at rest. Slack offers no end-to-end encryption functionality.
+
+So, security-wise, Slack and Microsoft are on par.
+
+
+## Intermittent Conclusion
+
+The message of this article is quite simple and clear: Use end-to-end encryption when data owners and system owners are not the same group of people. 
+Differentiating between securing the data and securing the infrastructure is essential, otherwise the infrastructure owners become de-facto data owners from a technical perspective. So ask yourself the question: do I care if my organizations data is controlled by ourselves, or is it fine to let external organizations handle our core data?
 
 ## A deeper cryptographical intro
 
