@@ -14,11 +14,11 @@ The situation has changed. Nowadays, security breaches is front page news on the
 
 ### The data
 
-The first thing to realise when talking about security in enterprise communication is that you are dealing with sensitive data.
-The messages and documents your employees send to eachother very often contain things that are sensitive to either the company or the employee.
-Obvious examples are: business plans, information aquired under NDA, maternity leaves and salary information.
+The first thing to realize when talking about security in enterprise communication is that you are dealing with sensitive data.
+The messages and documents your employees send to each other very often contain things that are sensitive to either the company or the employee.
+Obvious examples are: business plans, information acquired under NDA, maternity leaves and salary information.
 
-This data is often not only embarrasing and damaging for business to leak, it is also often regulated in law.
+This data is often not only embarrassing and damaging for business to leak, it is also often regulated in law.
 GDPR and stock market information regulations comes to mind.
 
 ### How the data is secured
@@ -33,24 +33,24 @@ Most people that have come in contact with computer security have heard about th
 
 These technologies are very good technologies, but the purpose is to secure the infrastructure, piece by piece, or as we call it in the industry, __hop-by-hop__ security.
 This means that when for example sending an email, the email is encrypted in transit and in storage, but the parties delivering the mail are able to decrypt the message.
-This is a weaknesses.
+This is a weakness.
 There can be vulnerable parts of the chain; or some part of the chain can be malicious.
 Traditional security models like this are good for securing infrastructure that you own, it is not designed to protect data which does not explicitly belong to the system owner.
 
 #### Securing the data at the end nodes
 
-When you do not control 100% of the infrastucrure - as when using cloud services - or the data does not belong to the system - as in a chat service or a mail system, protecting the infrastructure is not enough.
+When you do not control 100% of the infrastructure - as when using cloud services - or the data does not belong to the system - as in a chat service or a mail system, protecting the infrastructure is not enough.
 Additionally, you need to secure the data itself.
-If the data is encrypted at the message sender, and the decryption key is only made available to the intended recipient, you acheive what is called __end-to-end__ security (E2E).
-This type of security eliminates the need to fully trust evey part of the system, making for a reduced attack surface and brings data ownership back from the system to the data producer.
+If the data is encrypted at the message sender, and the decryption key is only made available to the intended recipient, you achieve what is called __end-to-end__ security (E2E).
+This type of security eliminates the need to fully trust every part of the system, making for a reduced attack surface and brings data ownership back from the system to the data producer.
 
 There are many technologies available for E2E, e.g. [HYKER](https://hyker.io), [PGP](http://openpgp.org), [Signal](https://whispersystems.org) and [OSCoAP](https://tools.ietf.org/html/draft-selander-ace-object-security-05). 
-They all acheive fully secure E2E, but with important differences making them suited for different purposes.
+They all achieve fully secure E2E, but with important differences making them suited for different purposes.
 
 ## The Briteback security model
 
 Briteback aims to be the optimal communication tool for enterprises, taking all of their needs into consideration.
-A modern enterprise needs a smooth communication sulution integrating several different ways of communication.
+A modern enterprise needs a smooth communication solution integrating several ways of communication.
 It also needs the information shared via this tool to be fully secure from leaks and changes.
 Confidentiality, integrity and authenticated origins of information are core values for enterprises.
 
@@ -59,11 +59,11 @@ Confidentiality, integrity and authenticated origins of information are core val
 
 For the above reasons, Briteback has integrated full end-to-end security in our services.
 
-The chosen service for end-to-end security is [HYKER](https://hyker.io), a Swedish security company dealing exclusively with end-to-end cryptogrphy.
-The pros and cons of this security model is described in further detail below, but the key takeaways is that regardless of if any Briteback or HYKER sevices are hacked or malicious, the customer data remains fully out of reach for both attackers and Briteback and HYKER themselves.
+The chosen service for end-to-end security is [HYKER](https://hyker.io), a Swedish security company dealing exclusively with end-to-end cryptography.
+The pros and cons of this security model is described in further detail below, but the key takeaways is that regardless of if any Briteback or HYKER services are hacked or malicious, the customer data remains fully out of reach for both attackers and Briteback and HYKER themselves.
 
 This is a very strong security statement.
-For an enterprise, it is highly preferrable to having to trust the sincerity and continuous server maintenece of external organizations.
+For an enterprise, it is highly preferable to having to trust the sincerity and continuous server maintenace of external organizations.
 
 ### Briteback competition security models
 
@@ -76,15 +76,15 @@ A more detailed description is available at:
 [Office 365 security](https://products.office.com/en/exchange/office-365-message-encryption)
 [Office 365 security FAQ](https://technet.microsoft.com/sv-se/library/dn569285.aspx)
 
-The gist of the content privided on those pages is that microsoft can read your data, but that they are trustworthy and that you should therefore not care.
-Since they know that they are in full control of their coustomers data, Microsoft issued issued this privacy statement:
+The gist of the content provided on those pages is that Microsoft can read your data, but that they are trustworthy and that you should therefore not care.
+Since they know that they are in full control of their customers data, Microsoft issued this privacy statement:
 [Privacy Statement](https://support.office.com/en-us/article/Office-365-Protected-Message-Viewer-Portal-privacy-statement-05b2e7e4-230e-48a9-802c-4cafac0d7c9d?ui=en-US&rs=en-US&ad=US)
 
 The fact that you need to trust their privacy statement and do not have access to end-to-end encryption makes for a vulnerable security model.
 
-This [video](https://www.youtube.com/watch?v=sAaO_maYowY) talks about that microsoft is a supplier which you can trust. They mention encryption in transit and encryption at rest. They also say that they do not use your data, and that you __should not have to worry anout that__. This begs the question: why does Microsoft not offer E2E encryption? 
+This [video](https://www.youtube.com/watch?v=sAaO_maYowY) talks about that Microsoft is a supplier which you can trust. They mention encryption in transit and encryption at rest. They also say that they do not use your data, and that you __should not have to worry about that__. This begs the question: why does Microsoft not offer E2E encryption? 
 
-With Microsofts security model, they are forcing their customers to worry about such things. They specifically state that microsoft engineers are the only ones that have access to your data, no one else. Why should you need to trust the engineers at microsoft? Microsofts entire security argument is based around "Do not trust anybody but us". It is the "but us" part that is weak. Strategies based on "dont trust anybody, not even us" are much stronger.
+With Microsofts security model, they are forcing their customers to worry about such things. They specifically state that Microsoft engineers are the only ones that have access to your data, no one else. Why should you need to trust the engineers at microsoft? Microsofts entire security argument is based around "Do not trust anybody but us". It is the "but us" part that is weak. Strategies based on "dont trust anybody, not even us" are much stronger.
 
 So dont trust words, trust actions. Trust proper encryption rather than privacy statements.
 
