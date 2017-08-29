@@ -92,7 +92,7 @@ With Microsofts security model, they are forcing their customers to worry about 
 So dont trust words, trust actions. Trust proper encryption rather than privacy statements.
 
 #### MS-teams
-MS-teams is security wise equivalent to Office 365. It is new set of new communication tools, but they are based upon Office 365.
+MS-teams is security-wise equivalent to Office 365. It is new set of new communication tools, but they are based upon Office 365.
 
 "Microsoft Teams is built upon Office 365 Groups and provides a new way to access shared assets for an Office 365 Group." 
 https://support.office.com/en-us/article/Frequently-asked-questions-about-Microsoft-Teams-–-Admin-Help-05cbe533-2181-4e95-a4b0-52cd7695fafc
