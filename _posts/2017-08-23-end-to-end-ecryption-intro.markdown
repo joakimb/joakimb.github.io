@@ -82,7 +82,7 @@ Since they know that they are in full control of their coustomers data, Microsof
 
 The fact that you need to trust their privacy statement and do not have access to end-to-end encryption makes for a vulnerable security model.
 
-The [video](https://www.youtube.com/watch?v=sAaO_maYowY) talks about that microsoft is a supplier which you can trust. They mention encryption in transit and encryption at rest. They also say that they do not use your data, and that you __should not have to worry anout that__. This begs the question: why does Microsoft not offer E2E encryption? 
+This [video](https://www.youtube.com/watch?v=sAaO_maYowY) talks about that microsoft is a supplier which you can trust. They mention encryption in transit and encryption at rest. They also say that they do not use your data, and that you __should not have to worry anout that__. This begs the question: why does Microsoft not offer E2E encryption? 
 
 With Microsofts security model, they are forcing their customers to worry about such things. They specifically state that microsoft engineers are the only ones that have access to your data, no one else. Why should you need to trust the engineers at microsoft? Microsofts entire security argument is based around "Do not trust anybody but us". It is the "but us" part that is weak. Strategies based on "dont trust anybody, not even us" are much stronger.
 
@@ -91,8 +91,7 @@ So dont trust words, trust actions. Trust proper encryption rather than privacy 
 #### MS-teams
 MS-teams is security-wise equivalent to Office 365. It is new set of new communication tools, but they are based upon Office 365.
 
-"Microsoft Teams is built upon Office 365 Groups and provides a new way to access shared assets for an Office 365 Group." 
-https://support.office.com/en-us/article/Frequently-asked-questions-about-Microsoft-Teams-–-Admin-Help-05cbe533-2181-4e95-a4b0-52cd7695fafc
+This is stated in a quote: "Microsoft Teams is built upon Office 365 Groups and provides a new way to access shared assets for an Office 365 Group.", coming from their [FAQ](https://support.office.com/en-us/article/Frequently-asked-questions-about-Microsoft-Teams-–-Admin-Help-05cbe533-2181-4e95-a4b0-52cd7695fafca).
 
 
 #### Slack
