@@ -84,7 +84,7 @@ The fact that you need to trust their privacy statement and do not have access t
 
 This [video](https://www.youtube.com/watch?v=sAaO_maYowY) talks about that Microsoft is a supplier which you can trust. They mention encryption in transit and encryption at rest. They also say that they do not use your data, and that you __should not have to worry about that__. This begs the question: why does Microsoft not offer E2E encryption? 
 
-With Microsofts security model, they are forcing their customers to worry about such things. They specifically state that Microsoft engineers are the only ones that have access to your data, no one else. Why should you need to trust the engineers at microsoft? Microsofts entire security argument is based around "Do not trust anybody but us". It is the "but us" part that is weak. Strategies based on "dont trust anybody, not even us" are much stronger.
+With Microsofts security model, they are forcing their customers to worry about such things. They specifically state that Microsoft engineers are the only ones that have access to your data, no one else. Why should you need to trust the engineers at Microsoft? Microsofts entire security argument is based around "Don't trust anybody but us". It is the "but us" part that is weak. Strategies based on "don't trust anybody, not even us" are much stronger.
 
 So dont trust words, trust actions. Trust proper encryption rather than privacy statements.
 
