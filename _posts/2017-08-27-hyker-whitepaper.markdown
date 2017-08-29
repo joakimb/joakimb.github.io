@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Security issues with cloud based enterprise communication"
+title: "HYKER Security Model and Use Cases"
 date: 2017-08-04 12:00:00 +0200
 ---
 
@@ -10,16 +10,27 @@ Security is, and always has been, a basic requirement for quality products. It h
 
 The situation has changed. Nowadays, security breaches is front page news on the most respected newspapers and system builders openly discuss their security model as a part of marketing.
 
-## Secure enterprise communication
+### The HYKER mission
 
-### The data
+HYKER takes a strike at securing the data in a system, as opposed to securing the infrastrucure. HYKER separates the access control of data from the process of sending it. A HYKER message does not have an explicit addressee. There is no recipient, and nobody can decrypt it. Instead of encrypting for a known receiver, the message is tagged with metadata of how to aquire the key. It is then up to a comsuming party to request access to the decrypting key.
 
-The first thing to realize when talking about security in enterprise communication is that you are dealing with sensitive data.
-The messages and documents your employees send to each other very often contain things that are sensitive to either the company or the employee.
-Obvious examples are: business plans, information acquired under NDA, maternity leaves and salary information.
+This makes the system highly suitable for pub-sub systems, especially when you have multiple parties involved, or the data is stored, or people come and go.
 
-This data is often not only embarrassing and damaging for business to leak, it is also often regulated in law.
-GDPR and stock market information regulations comes to mind.
+This is all done using __end-to-end__ encryption, protecting the data in an ubroken chain from producer to consumer. There is no central storage of decryption keys. The important thing is that sensitive data does not touch any part of a system it does not need to.
+
+The security of a certain part of a system is always easy. Use good encryption, install a firwewall, separate processes etc. The hard part is getting the overall security good. Being sure that there is no part of the chain that is weaker. HYKER eliminates the need to trust the ultimate security of every part of the chain by focusing on the data instead of the infrastructure.
+
+
+### Key insight: Encryption is easy
+
+Want to encrypt something? Good, go get a state of the art implementation of a world class algorithm. This is available in a multitude of open source libraries. For free.
+
+### Key insight: Key Distribution is hard
+
+### Key insight: Access Control is all about trust
+
+parts of a system, select what you want to trust not what you need to trust. This way yoyr system design and security model is not dependent on each other, you dont need to trust a part of your system just because data flows through it.
+## Secure communication
 
 ### How the data is secured
 
@@ -47,64 +58,36 @@ This type of security eliminates the need to fully trust every part of the syste
 There are many technologies available for E2E, e.g. [HYKER](https://hyker.io), [PGP](http://openpgp.org), [Signal](https://whispersystems.org) and [OSCoAP](https://tools.ietf.org/html/draft-selander-ace-object-security-05). 
 They all achieve fully secure E2E, but with important differences making them suited for different purposes.
 
-## The Briteback security model
+## Example Use Cases
 
-Briteback aims to be the optimal communication tool for enterprises, taking all of their needs into consideration.
-A modern enterprise needs a smooth communication solution integrating several ways of communication.
-It also needs the information shared via this tool to be fully secure from leaks and changes.
-Confidentiality, integrity and authenticated origins of information are core values for enterprises.
+### Iridium
+fredrik skriver
 
+### Logistgics
 
-### Briteback security model
+ex transport pharmacuticals through south america 
 
-For the above reasons, Briteback has integrated full end-to-end security in our services.
+### Autonomous Vehicles
 
-The chosen service for end-to-end security is [HYKER](https://hyker.io), a Swedish security company dealing exclusively with end-to-end cryptography.
-The pros and cons of this security model is described in further detail below, but the key takeaways is that regardless of if any Briteback or HYKER services are hacked or malicious, the customer data remains fully out of reach for both attackers and Briteback and HYKER themselves.
+#### Car-to-car communication
 
-This is a very strong security statement.
-For an enterprise, it is highly preferable to having to trust the sincerity and continuous server maintenace of external organizations.
+#### Traffic Managemant System
 
-### Briteback competition security models
+#### Car-and-environment communication
 
+street signs etc
 
-#### Microsoft Office 365
+### Telco messaging
+briteback
 
-Microsoft uses the traditional security model of hop-by-hop encryption, separating connection security and security for data at rest.
+### Surveillance
 
-A more detailed description is available at:
-[Office 365 security](https://products.office.com/en/exchange/office-365-message-encryption)
-[Office 365 security FAQ](https://technet.microsoft.com/sv-se/library/dn569285.aspx)
+### Home Care
+ex apartment keys for home services by nurse
 
-The gist of the content provided on those pages is that Microsoft can read your data, but that they are trustworthy and that you should therefore not care.
-Since they know that they are in full control of their customers data, Microsoft issued this privacy statement:
-[Privacy Statement](https://support.office.com/en-us/article/Office-365-Protected-Message-Viewer-Portal-privacy-statement-05b2e7e4-230e-48a9-802c-4cafac0d7c9d?ui=en-US&rs=en-US&ad=US)
-
-The fact that you need to trust their privacy statement and do not have access to end-to-end encryption makes for a vulnerable security model.
-
-This [video](https://www.youtube.com/watch?v=sAaO_maYowY) talks about that Microsoft is a supplier which you can trust. They mention encryption in transit and encryption at rest. They also say that they do not use your data, and that you __should not have to worry about that__. This begs the question: why does Microsoft not offer E2E encryption? 
-
-With Microsofts security model, they are forcing their customers to worry about such things. They specifically state that Microsoft engineers are the only ones that have access to your data, no one else. Why should you need to trust the engineers at Microsoft? Microsofts entire security argument is based around "Don't trust anybody but us". It is the "but us" part that is weak. Strategies based on "don't trust anybody, not even us" are much stronger.
-
-So dont trust words, trust actions. Trust proper encryption rather than privacy statements.
-
-#### MS-teams
-MS-teams is security-wise equivalent to Office 365. It is new set of new communication tools, but they are based upon Office 365.
-
-This is stated in a quote: "Microsoft Teams is built upon Office 365 Groups and provides a new way to access shared assets for an Office 365 Group.", coming from their [FAQ](https://support.office.com/en-us/article/Frequently-asked-questions-about-Microsoft-Teams-–-Admin-Help-05cbe533-2181-4e95-a4b0-52cd7695fafca).
+### Manufacturing
 
 
-#### Slack
-
-Slack boasts about their compliance certifications on their [security page](https://slack.com/security). They also talk about their various security features, such as SAML-based SSO. This is all good. Their Achilles' heel is the same as Microsofts though. They focus on hop-by-hop encryption through encryption in transit and encryption at rest. Slack offers no end-to-end encryption functionality.
-
-So, security-wise, Slack and Microsoft are on par.
-
-
-## Intermittent Conclusion
-
-The message of this article is quite simple and clear: Use end-to-end encryption when data owners and system owners are not the same group of people. 
-Differentiating between securing the data and securing the infrastructure is essential, otherwise the infrastructure owners become de-facto data owners from a technical perspective. So ask yourself the question: do I care if my organizations data is controlled by ourselves, or is it fine to let external organizations handle our core data?
 
 ## A deeper cryptographical intro
 
@@ -246,6 +229,11 @@ End-to-end data security on the other hand protects the data itself, not the inf
 ![E@EE Comparison]({{ site.url }}/images/comparison.png)
 
 **E2EE Comparison**
-#### whatsapp
+
+## Intermittent Conclusion
+
+The message of this article is quite simple and clear: Use end-to-end encryption when data owners and system owners are not the same group of people. 
+Differentiating between securing the data and securing the infrastructure is essential, otherwise the infrastructure owners become de-facto data owners from a technical perspective. So ask yourself the question: do I care if my organizations data is controlled by ourselves, or is it fine to let external organizations handle our core data?
+
 
 
