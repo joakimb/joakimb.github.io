@@ -73,9 +73,12 @@ In a secure system, trusted parties are those who have access to data, i.e. they
 
 ### Data life cycle
 
-When 
+Data is data, unrelated to what system it flows through. Therefore we need to focus on the full data lifecycle, from production to consumption, over time, using any system. This is what HYKER does.
+The HYKER innovation consists of the separation of encryption and access control. This is the enabler for trust based security, where you can select trusted parts of a system based on the data, not on how the infrastructure is designed. It also enables voulontairy delegation of control and retroactive access.
 
 ### Retroactive access
+
+### Access Control Delegation
 
 ## Example Use Cases
 
