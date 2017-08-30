@@ -78,7 +78,9 @@ Autonomous vehicles are going to communicate alot. The most basic form of commun
 
 As this information can be sensitive it is important for the vehicle to be able to set rules for how the data propagates and with whom it is shared. That is, detected obstacles can be public data, position and heading made available to nearby vehicles, and routing plans are shared only with associated vehicles (e.g. within the same fleet). The groups formed will be of varying dynamicity; the nearby-vehicles-group will be highly dynamic while the fleet remains fairly consistent. The forming of these groups, and the maintaining of a healthy state over time by including and excluding members, is a central problem for autonomous systems as agents need to trust the consistency of such groups in order to trust the data.
 
-This is a basic example of the security needed in a self-organizing system where agents can reach consensus in a distributed way. It also suggests how to restrict propagation of sensitive information without human administration. 
+This is a basic example of the security needed in a self-organizing system where agents can reach consensus in a distributed way. It also suggests how to restrict propagation of sensitive information without human administration.
+
+In scenario like this, with a shared infrastructure that is constantly changing, security will be unobtainable usin traditional ifrastructure-based methods. Instead we will need a trust based model like HYKER.
 
 #### Traffic Managemant System
 
