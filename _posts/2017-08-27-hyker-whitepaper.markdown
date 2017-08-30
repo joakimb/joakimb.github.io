@@ -279,11 +279,15 @@ These tools are very good for their purpose, which is protecting the infrastuctu
 End-to-end data security on the other hand protects the data itself, not the infrastructure. 
 
 ### HYKER
+With HYKER you can select your own trust model, without having to adapt it to the topology of your system.
+
+
+![Trust Models]({{ site.url }}/images/trust-model.jpg)
 
 ### Signal
 
 
-![E@EE Comparison]({{ site.url }}/images/comparison.png)
+![E2EE Comparison]({{ site.url }}/images/comparison.png)
 
 **E2EE Comparison**
 
