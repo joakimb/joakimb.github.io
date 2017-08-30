@@ -14,7 +14,7 @@ The situation has changed. Nowadays, security breaches is front page news on the
 
 HYKER takes a strike at securing the data in a system, as opposed to securing the infrastrucure. HYKER separates the access control of data from the process of sending it. A HYKER message does not have an explicit addressee. There is no recipient, and nobody can decrypt it. Instead of encrypting for a known receiver, the message is tagged with metadata of how to aquire the key. It is then up to a comsuming party to request access to the decrypting key.
 
-This makes the system highly suitable for pub-sub systems, especially when you have multiple parties involved, or the data is stored, or people come and go.
+This makes the system highly suitable for pub-sub systems, especially when you have multiple parties involved, or the data is stored over time, or people in the sysem come and go.
 
 This is all done using __end-to-end__ encryption, protecting the data in an ubroken chain from producer to consumer. There is no central storage of decryption keys. The important thing is that sensitive data does not touch any part of a system it does not need to.
 
@@ -92,6 +92,14 @@ This is a basic example of the security needed in a self-organizing system where
 
 In scenario like this, with a shared infrastructure that is constantly changing, security will be unobtainable usin traditional ifrastructure-based methods. Instead we will need a trust based model like HYKER.
 
+### Predictive maintenance
+
+In the simplest form of predictive maintenance, where all of the infrastucture is owned by the same company that conducts the maintenance and the data is not sensitive, there is no place for HYKER. Traditional security will do just fine.
+
+But as soon as we start to enter more evolved scenarios, such as predicive maintenance as a service, military operations, or critical infrastructure, we start having to deal with the questions posed above. What part of the system is exposed to third parties, does the system use any kinnd of cloud service, who is collaboratively using data, and so on. A single RPM value from an engine is probably not sensitive at all, but aggregated data from continuous predictive maintenance can be powerful information mapping the properties, systems and current state of an organization. This is where a trust based security model can be of help.
+
+Take a critical infrastructure example: a powerplant. 
+
 ### Logistgics
 
 ex transport pharmacuticals through south america 
@@ -105,7 +113,7 @@ This means that the Telco, and the Telco customers, must trust each and every no
 
 Many customers have high requirements on security and are uncomfortable or even legally required not to trust 3rd party networks or cloud storages. Through GDPR et al they are required to maintain full control over their and their clients data, disregarding who they have contracted to store or process that data. 
 
-HYKER provides a technology where data is protected in an unbroken chain from the data producer to the data consumer, in transit, at rest and over time. A form of end-to-end encryption technology but with managed trust and data access control. 
+HYKER provides a technology where data is protected in an unbroken chain from the data producer to the data consumer, in transit, at rest and over time, independent of network technology. A form of end-to-end encryption technology but with managed trust and data access control. 
 
 Instead of having trust distributed and delegated as a result of the different network and cloud suppliers models, the customer can take full control over the system and manage trust to best suit the security needs and logics of their application.
 
@@ -116,6 +124,7 @@ A Telco that sells connectivity and capacity to transmit sensitive data for a cl
  * You can different on security level, with a premium communication service that is fully end-to-end protected in an unbroken chain, even if you share network resources with other Telcos. You can be the most secure communication link that the customer doesn’t have to trust from a data access point of view.
  * You can provide service and application developer partners with a new security tool that protects their data through the full data lifecycle.
  * You can offer storage or cloud services to customers with sensitive information. You store their encrypted data, but have no access to keys and thus no access to the data itself.
+ * If the Telco provide message broker services like MQTT for IoT, HYKER uniquely adds an end-to-end encryption layer that fully follows the traffic patterns of one-to-many publish-subscribe communication, enabling a data producer to encrypt the data without knowing the recipient(s).
 
 ### Surveillance
 
