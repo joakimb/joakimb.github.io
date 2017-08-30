@@ -105,6 +105,8 @@ So, security-wise, Slack and Microsoft are on par.
 
 The message of this article is quite simple and clear: Use end-to-end encryption when data owners and system owners are not the same group of people. 
 Differentiating between securing the data and securing the infrastructure is essential, otherwise the infrastructure owners become de-facto data owners from a technical perspective. So ask yourself the question: do I care if my organizations data is controlled by ourselves, or is it fine to let external organizations handle our core data?
+ =============================================== END OF ARTICLE=================================
+## The next part of the article is probably a seperate article, (and not finished)
 
 ## A deeper cryptographical intro
 
