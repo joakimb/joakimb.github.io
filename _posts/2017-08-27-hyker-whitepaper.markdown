@@ -134,6 +134,10 @@ A Telco that sells connectivity and capacity to transmit sensitive data for a cl
 ### Home Care
 ex apartment keys for home services by nurse
 
+### Smart City
+
+### General IoT
+
 ### Manufacturing
 
 
