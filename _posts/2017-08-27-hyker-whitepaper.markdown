@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HYKER Security Model and Use Cases"
+title: "Use Cases for a Trust Based Security Model"
 date: 2017-08-04 12:00:00 +0200
 ---
 
@@ -18,7 +18,7 @@ This makes the system highly suitable for pub-sub systems, especially when you h
 
 This is all done using __end-to-end__ encryption, protecting the data in an ubroken chain from producer to consumer. There is no central storage of decryption keys. The important thing is that sensitive data does not touch any part of a system it does not need to.
 
-The security of a certain part of a system is always easy. Use good encryption, install a firwewall, separate processes etc. The hard part is getting the overall security good. Being sure that there is no part of the chain that is weaker. HYKER eliminates the need to trust the ultimate security of every part of the chain by focusing on the data instead of the infrastructure.
+The security of a certain part of a system is always easy. Use good encryption, install a firwewall, separate processes etc. The hard part is getting the overall security good. Being sure that there is no part of the chain that is weaker. HYKER eliminates the need to trust the ultimate security of every part of the chain by focusing on the data instead of the infrastructure. This is done through a trust based security model.
 
 
 ### Key insight: Encryption is easy
@@ -65,7 +65,7 @@ They all achieve fully secure E2E, but with important differences making them su
 
 ## Example Use Cases
 
-### Iridium
+### Sattelite Communication
 fredrik skriver
 
 ### Logistgics
