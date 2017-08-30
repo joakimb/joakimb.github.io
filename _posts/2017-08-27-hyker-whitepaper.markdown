@@ -103,6 +103,10 @@ have many
 
 An operation like this world be difficult to propely secure with traditional techniques, since you would have to put a lot of unneccecary trust in the different parties. With a trust base security model like HYKER however, it would be alot easier since you can selectively pick what parties should be trusted with what data on a very granular level.
 
+In a recent [report](https://www.foi.se/en/pressroom/news/news-archive/2017-08-29-risks-with-online-societal-services.html) from the swedish Defence Research Agency, it is concluded that the current computer security at swedish critical infrastructure, like powerplants etc., is serverely substandard. The report suggests that cutting the cord, i.e. disconnecting all infrastructure from the internet, is a viable solution.
+
+We dont belive in the proposed solution which would bring us back to the 90:s. Instead we belive in a proper security model.
+
 ### Logistgics
 
 ex transport pharmacuticals through south america 
