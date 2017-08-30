@@ -160,13 +160,15 @@ The solution can be a trust based security model. In day-to-day use, the car bro
 
 ## The why (the cause for the new situation)
 
-An important cause for security moving from the back to beeing pronounciated is the booming of clous computing. Most systems are now fully or partly cloud? Why? Because it is easy and csoat efficient. The downside is that the flyffy term "The Cloud" really only means "Someone elses computer". 
+An important cause for security moving from the back to beeing pronounciated is the booming of cloud computing. Most systems are now fully or partly cloud based, which is great for efficiency and feature reasons. The downside is that the term "The Cloud" really only means "Someone elses computer". Using the cloud means bringing in more parties in the system, which have to be trusted. In the security business, we call that an increased attack surface. When changing a system by adding a cloud component, your system can now also be attacked in that part of the system, which you might not be in control over.
 
-Think about it. Saying, "we will get a cheaper and more availabe service using the cloud" sounds much better than, "we can save cost by putting all of our core data on someone elses computer".
+People should not need to fully trust the service provider and all the accompanying parties with their sensitive data. This is where encryption comes in to play.
 
-Using the cloud means bringin in more parties in the system, which has to be trusted. In the security business, we call that an increased attack surface. When changing the system by adding a ofr example a cloud storage service, your system can now also be attacked in that part of the system.
+In the picture below we provide a security perspective on cloud services. In the first pane, the pre-cloud era, organizations used perimeter security. They made sure that all critical infrastructure was protected by firewalls IDS:s etc.
 
-People should not need to fully trust the service provider and all the accopanyuing parties with their sensitive data. This is where encryption comes in to play.
+The second pane is an illustration of when organizations strarted using cloud services, effectively sharing control over their services and data. This was a calculated risk. Knowing that they risked losing data, they gained efficiency and cost savings.
+
+A trust based security model is is illustrated in the last pane. Here, you still use the cloud service, but you don't consider them trusted. I.e. you keep control within you own organization by only letting the cloud service act on encrypting data. The keys never leave the organization.
 
 ![Cloud History]({{ site.url }}/images/cloudhist.png)
 
