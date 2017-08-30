@@ -43,7 +43,7 @@ All security is based on conditionally selecting trusted parts of a system. To e
 Rules are prone to human error, or malicious intents.
 Cryptography on the other hand is highly resistant to these flaws.
 
-#### Securing every part of the system
+#### Securing every part of the system (Hop-by-Hop)
 
 Most people that have come in contact with computer security have heard about the common techniques for connection security and end node security such as TLS and firewalls.
 
@@ -53,7 +53,7 @@ This is a weakness.
 There can be vulnerable parts of the chain; or some part of the chain can be malicious.
 Traditional security models like this are good for securing infrastructure that you own, it is not designed to protect data which does not explicitly belong to the system owner.
 
-#### Securing the data at the end nodes
+#### Securing the data at the end nodes (End-to-End)
 
 When you do not control 100% of the infrastructure - as when using cloud services - or the data does not belong to the system - as in a chat service or a mail system, protecting the infrastructure is not enough.
 Additionally, you need to secure the data itself.
@@ -63,14 +63,21 @@ This type of security eliminates the need to fully trust every part of the syste
 There are many technologies available for E2E, e.g. [HYKER](https://hyker.io), [PGP](http://openpgp.org), [Signal](https://whispersystems.org) and [OSCoAP](https://tools.ietf.org/html/draft-selander-ace-object-security-05). 
 They all achieve fully secure E2E, but with important differences making them suited for different purposes.
 
+## Data Life Cycle Security
+
+### What is trust?
+
+Trust is related to abilities. What abilities do I trust a certain party with?
+
+In a secure system, trusted parties are those who have access to data, i.e. they are able to obtain decryption keys. This entails that in a __hop-by-hop__ system, all hops are trusted. In __end-to-end__ systems however, only the end points are trusted. This means that we should opt for __end-to-end__ based systems if there is sensitive data, or data not owned by the system edministrators, involved.
+
+### Data life cycle
+
+When 
+
+### Retroactive access
+
 ## Example Use Cases
-
-### Sattelite Communication
-fredrik skriver
-
-### Logistgics
-
-ex transport pharmacuticals through south america 
 
 ### Autonomous Vehicles
 
@@ -82,11 +89,14 @@ This is a basic example of the security needed in a self-organizing system where
 
 In scenario like this, with a shared infrastructure that is constantly changing, security will be unobtainable usin traditional ifrastructure-based methods. Instead we will need a trust based model like HYKER.
 
-#### Traffic Managemant System
+### Sattelite Communication
+fredrik skriver
 
-#### Car-and-environment communication
+### Logistgics
 
-street signs etc
+ex transport pharmacuticals through south america 
+
+
 
 ### Telco messaging
 briteback
