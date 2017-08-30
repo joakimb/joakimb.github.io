@@ -174,41 +174,7 @@ A trust based security model is is illustrated in the last pane. Here, you still
 
 **Cloud History**
 
-## The how (how is security implemented)
 
-
-#### Email example for HBH
-
-1. sender creates email and encrypts it for her email server.
-2. the senders email server receives the email and decrypts it
-3. the senders email server reencrypts the email for therecipients email server and send it there
-4. the recipients email server receives the email, decrypts it, and then reencrypts it for the recipient.
-
-here, the security is divided in to several steps, and the email is vulnerable everytime is decrypted and reencrypted.
-it is also a system with 4 parties. The sender, the receiver, the senders email service and the receivers email service.
-All of these parts needs to be trusted (we wont get into the email services thrird party services since it would be too complex, but basically, those also needs to be trusted.)
-
-oscoap
-pgp
-signal
-hyker
-
-we will explain the differences in more depth later. Right now, lets revisit the email example, but use e2e
-
-#### Email example for e2e
-
-1. sender creates email and encrypts it for the RECIPIENT
-2. the senders email server receives the email, it can see where to send it but it can not decrypt the contents
-3. the senders email server sends the email to the recipients email server
-4. the recipients email server receives the email, this server also can not read the contents
-5. when the recipient recieves 
-
-as you can see, no part of the system except for the intended recipient has the decryption keys. Therefore we can use the same servers as in the prior example, but we do not give them access to the data.
-
-### rules vs crypto
-
-this can all be condensed to rules vs crypto. in the first example, hbh, we have rules... etc
-it is a question of "who has access to the keys". Many systems are fully encrypted, but the important thing is where is the control of the decryption keys.
 
 ## The why, revisited
 
@@ -279,16 +245,147 @@ To wrap up, the core 2 carchteristicts in this context is:
  * Are there both clients and servers?
  * Is the communication syncronous or asynchronous.
 
-### Traditional security
+## Introduction
 
-Traditional security makes a clear distinction between securing connections and devices such as servers and clients.
-The focus here is to secure every part of the system. We have one type of security for the clients, one for the connection between the clients and the servers, and one for the servers. Common techniques here are: TLS, VPN, firewalls, IDS:s etc.
+The traditional internet landscape consists of cables and big central servers. Clients pushes and pulls data to and from servers.
 
-These tools are very good for their purpose, which is protecting the infrastucture. But as soon as we have systems where you use third party providers, you should consider using end-to-end security instead.
+The current internet landscape is moving away from that reality, and has been for some time. A large portion of devices, e.g. phones or IoT-devices, communicate over wireless channels. Centralized systems are becoming more and more distributed and devices often communicate directly without a central point.
 
-### End-to-end security
+The changed communication landscape needs a new approach for communication security, and HYKER solves many of the inherent problems.
 
-End-to-end data security on the other hand protects the data itself, not the infrastructure. 
+## Communication patterns
+
+### Synchronicity and Asynchronicity
+
+At the core of the changing landscape is a transfer from synchronous to asynchronous communications patterns. The shift is inherent to how many applications function.
+
+We are not saying that synchronous communication is going away, because it certainly is not. However the portion of traffic occurring over asynchronous protocols is growing, and the security needs to be tended to.
+
+#### Synchronous communication
+
+Synchronous communication is information exchange between parties online at the same time. It is analogous to a phone call:
+
+* The communication is initialized by one party.
+* The information exchange start after the second party accepts the offer.
+* No party can continue without the other.
+* The exchange is terminated simultaneously.
+
+This is very handy when you have a direct communication line to the other party and require some form of interaction, i.e. a response or a confirmation. There is no need for an intermediate routing node, e.g. a server, and you are always aware of whom you are communicating with.
+
+##### Typical examples:
+
+TCP, HTTP.
+
+#### Asynchronous communication
+
+Asynchronous communication on the other hand does not require both parties to be online simultaneously. It is more like sending a letter:
+
+* The communication starts directly, it does not require interaction from a recipient.
+* A sender can continue sending without interaction from another party.
+* The exchange is not terminated since it is not an active connection.
+
+This is handy when you want to send a message somewhere and do not care for an intermediate response. E.g. an email exchange does not require immediate responses, responses can be sent days afterwards.
+
+Further, asynchronous communication will require an intermediate to store the message while waiting for the recipient to come online. This is analogous to the postal service when delivering a letter. Using an intermediate brings other advantages; we do not have to decide whom the recipient is at send time. Instead this can be decided at a later time by the intermediate. Such an intermediate is often called a broker.
+
+##### Typical examples:
+
+email, MQTT, AMQP, SMS.
+
+### Request-Response and Publish-Subscribe
+
+Another way to categorize communication is in Request-Response and Publish-Subscribe.
+
+#### Request-Response
+
+Request-response is a communication pattern for communication between 2 parties. Every message sent from one party requires a response from the other. A typical example is HTTP, where a client sends a request for a web page and the server responds with the page or an error code. Client-server scenarios such as this are often implemented using request-response patterns.
+
+#### Publish-Subscribe
+
+Publish-subscribe systems are of another nature. Here we have a single sender publishing a message to several recipients. The key word here is **publish**, i.e. the message is not for a single recipient, but for a group of recipients.
+
+When publishing on a network or through a caching intermediate such as a broker, we do not have to know all the recipients. It can be endpoint in a specific block, subscribers to a certain new channel, or something else.
+
+An example of a system using a publish-subscribe messaging pattern is a thermometer broadcasting its current value to whoever is interested.
+
+This broadcasting can take place over synchronous channels such as ethernet, or asynchronous channels such as MQTT. Using an asynchronous channel enables a time perspective where the recipient can fetch historic messages and therefore does not have to be constantly online in order to not miss out.
+
+## Security patterns
+
+The suitable security model to use is dependent on how the system communicates. In this section we describe relevant characteristics of communications security.
+
+### Channel Security and Object Security
+
+#### Channel Security
+
+Channel security is a means of achieving a secure channel between 2 endpoints. The channel is negotiated and managed by a protocol at the data, network or transport level in the protocol stack. The channel handles the data agnostically; it does not know anything about the payload.
+
+This security model is suitable for securing a synchronous connection between 2 parties, since it requires interaction between the parties.
+
+#### Object Security
+
+Object security is a way of achieving secure communication with no need for a secure channel. Instead of relying on a communication protocol lower in the stack to handle the encryption, the application that created the message will handle encryption and decryption of its own communication.
+
+The difference between channel security and object security may seem subtle, the key difference is that in object security an application handles its own secure communication. This has the effect that when using object security, an application does not need to rely on a secure channel. Rather, it can pick and choose by itself what to protect and how to protect it. This is a very important aspect, as we shall see.
+
+Since object security encrypts the payload of a message, it is sometimes referred to as **Payload Encryption**.
+
+### End-to-end and Hop-by-hop
+
+When communicating through an intermediate, we can either terminate the security in the intermediate or let the message stay encrypted all the way through. This is calles using end-to-end or hop-by-hop security.  
+Hop-by-hop security
+
+#### Hop-by-hop Security
+
+Hop-by-hop security, visualized in Figure 1, is to terminate the channel security session in the caching node, effectively dividing the security in two parts. One part from the sender to the caching node and one part from the caching node to the receiver.  
+The data is force to be decrypted when is enters the intermediate node.
+
+![Hop-by-hop security](./hbh_900.png)
+
+**Figure 1**
+
+#### End-to-end Security
+
+End-to-end security, visualised in Figure 2, is to not terminate the session at the proxy but instead keep security through the proxy. This thwarts the possibility for the proxy to attack the session in a meaningful way since it prevents it from reading the data or changing it without detection.
+
+![End-to-end security](./e2e_900.png)
+
+**Figure 2**
+
+### The common security situation today
+
+Today, many services are secured by channel security. This is perfectly fine and actually preferable for the many synchronous request-response applications out there, e.g. web pages.
+
+The problem is that the same security tools have been used to secure asynchronous publish-subscribe systems as well, such as MQTT.
+
+#### The clash between End-to-end security and channel security
+
+When securing asynchronous communication systems using an intermediate proxy, a common approach has been to use hop-by-hop channel security.
+
+Hop-by-hop security is undesirable for many reasons. Among other reasons, hop-by-hop security is undesirable because:
+
+* Privacy is unattainable if an intermediate proxy can decrypt or alter data
+* Giving an intermediate proxy access will increase the attack surface
+* Giving an intermediate proxy access will create a single point of failure for the security
+* Control over data is not in the hand of the sender and receiver if an intermediate proxy has access
+* In a multi-party system, where many organizations collaborate, a centralized intermediate with communication access renders data channel separation unsolvable
+
+#### Advantages of transitioning to Object Security
+
+Since asynchronous communication requires intermediates, we need Object Security in order to achieve end-to-end security. With object security, only the payload is encrypted, the session data stays untouched. Thus, an encrypted payload can be sent to an intermediate proxy which has no ability do decrypt or alter the data. The payload can then be fetched by recipients with decryption abilities. This way, the data is encrypted by the same key through the entire chain, both in transit to the intermediate, at rest while cached at the intermediate, and finally in transit to a recipient.
+
+The most popular IoT protocols today are asynchronous with intermediate proxies.
+
+Examples of publish-subscribe ones are:
+
+* MQTT
+* AMQP
+
+Request-response ones are:
+
+* CoAP
+
+In conclusion, object security enables end-to-end security without preventing proxy operations.
 
 ### HYKER
 With HYKER you can select your own trust model, without having to adapt it to the topology of your system.
