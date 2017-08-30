@@ -92,9 +92,6 @@ This is a basic example of the security needed in a self-organizing system where
 
 In scenario like this, with a shared infrastructure that is constantly changing, security will be unobtainable usin traditional ifrastructure-based methods. Instead we will need a trust based model like HYKER.
 
-### Sattelite Communication
-fredrik skriver
-
 ### Logistgics
 
 ex transport pharmacuticals through south america 
@@ -102,7 +99,23 @@ ex transport pharmacuticals through south america
 
 
 ### Telco messaging
-briteback
+Data flows through the network of a Telco, but it is not in a single line. The systems are complex networks of communication links and relaying nodes, routers, servers, data storages etc. Many from different 3rd party suppliers. Each link and each node is usually protected with perimeter security models, like encrypted tunnels, SSL/TLS protocols, etc and the nodes have their access control, locked down ports etc. This is network security, or hop-by-hop security. Data is encrypted in transit over a link, but decrypted into clear text in the node and re-encrypted for the next link.
+
+This means that the Telco, and the Telco customers, must trust each and every node, the staff that has access to the node and the developer and supplier of this node.
+
+Many customers have high requirements on security and are uncomfortable or even legally required not to trust 3rd party networks or cloud storages. Through GDPR et al they are required to maintain full control over their and their clients data, disregarding who they have contracted to store or process that data. 
+
+HYKER provides a technology where data is protected in an unbroken chain from the data producer to the data consumer, in transit, at rest and over time. A form of end-to-end encryption technology but with managed trust and data access control. 
+
+Instead of having trust distributed and delegated as a result of the different network and cloud suppliers models, the customer can take full control over the system and manage trust to best suit the security needs and logics of their application.
+
+Extended offering
+A Telco that sells connectivity and capacity to transmit sensitive data for a client can extend their offerings with HYKER end-to-end encryption and managed trust. This can be done in different ways depending on the business models of the Telco. 
+
+#### Some general examples:
+ * You can different on security level, with a premium communication service that is fully end-to-end protected in an unbroken chain, even if you share network resources with other Telcos. You can be the most secure communication link that the customer doesn’t have to trust from a data access point of view.
+ * You can provide service and application developer partners with a new security tool that protects their data through the full data lifecycle.
+ * You can offer storage or cloud services to customers with sensitive information. You store their encrypted data, but have no access to keys and thus no access to the data itself.
 
 ### Surveillance
 
