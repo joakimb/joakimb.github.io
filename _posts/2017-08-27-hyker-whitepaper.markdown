@@ -27,9 +27,14 @@ Want to encrypt something? Good, go get a state of the art implementation of a w
 
 ### Key insight: Key Distribution is hard
 
+So, you have a good way of encrypting your data. How do you obtain the key? In simple systems you can use a classic PKI? But what if you don't know the reciever at send time? What if the reciever belongs to another organization that does not use a PKI? What if the keys needs to be replicated?
+
+Key distribution and key management are genrally recognized as problems with no one-size-fits-all solution. This is a big reason for why securing a system is difficult. The owner of the keys controls tha data, and key management controls key ownership. 
+
 ### Key insight: Access Control is all about trust
 
 parts of a system, select what you want to trust not what you need to trust. This way yoyr system design and security model is not dependent on each other, you dont need to trust a part of your system just because data flows through it.
+
 ## Secure communication
 
 ### How the data is secured
