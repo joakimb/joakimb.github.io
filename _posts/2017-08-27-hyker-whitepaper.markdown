@@ -96,7 +96,7 @@ In scenario like this, with a shared infrastructure that is constantly changing,
 
 In the simplest form of predictive maintenance, where all of the infrastucture is owned by the same company that conducts the maintenance and the data is not sensitive, there is no place for HYKER. Traditional security will do just fine.
 
-But as soon as we start to enter more evolved scenarios, such as predicive maintenance as a service, military operations, or critical infrastructure, we start having to deal with the questions posed above. What part of the system is exposed to third parties, does the system use any kinnd of cloud service, who is collaboratively using data, and so on. A single RPM value from an engine is probably not sensitive at all, but aggregated data from continuous predictive maintenance can be powerful information mapping the properties, systems and current state of an organization. This is where a trust based security model can be of help.
+But as soon as we start to enter more evolved scenarios, such as predicive maintenance as a service, military operations, or critical infrastructure, we start having to deal with the questions posed above. What part of the system is exposed to third parties, does the system use any kinnd of cloud service, who is collaboratively using data, and so on. A single RPM value from an engine is probably not sensitive at all, but aggregated data from continuous predictive maintenance can be powerful information mapping the properties, systems and current state of an organization. An example of that predictive maintenance data is considered sensitive is available in a recent [report from ICF](https://www.icf.com/-/media/files/icf/white-papers/2017/aviation_aerospace_ahm_aircraft_big_data_analytics_health_monitoring_wp.pdf), where the question of data ownership is explored and deemed central. This is where a trust based security model can be of help.
 
 Take a critical infrastructure example: a powerplant. The powerplant uses one firm to conduct the automatic infrastructure surveillance, and various contractors to repair and replace parts. This means that we
 have many
@@ -106,12 +106,6 @@ An operation like this world be difficult to propely secure with traditional tec
 In a recent [report](https://www.foi.se/en/pressroom/news/news-archive/2017-08-29-risks-with-online-societal-services.html) from the swedish Defence Research Agency, it is concluded that the current computer security at swedish critical infrastructure, like powerplants etc., is serverely substandard. The report suggests that cutting the cord, i.e. disconnecting all infrastructure from the internet, is a viable solution.
 
 We dont belive in the proposed solution which would bring us back to the 90:s. Instead we belive in a proper security model.
-
-### Logistgics
-
-ex transport pharmacuticals through south america 
-
-
 
 ### Telco messaging
 Data flows through the network of a Telco, but it is not in a single line. The systems are complex networks of communication links and relaying nodes, routers, servers, data storages etc. Many from different 3rd party suppliers. Each link and each node is usually protected with perimeter security models, like encrypted tunnels, SSL/TLS protocols, etc and the nodes have their access control, locked down ports etc. This is network security, or hop-by-hop security. Data is encrypted in transit over a link, but decrypted into clear text in the node and re-encrypted for the next link.
@@ -133,16 +127,32 @@ A Telco that sells connectivity and capacity to transmit sensitive data for a cl
  * You can offer storage or cloud services to customers with sensitive information. You store their encrypted data, but have no access to keys and thus no access to the data itself.
  * If the Telco provide message broker services like MQTT for IoT, HYKER uniquely adds an end-to-end encryption layer that fully follows the traffic patterns of one-to-many publish-subscribe communication, enabling a data producer to encrypt the data without knowing the recipient(s).
 
+### Logistgics
+[TODO] (fredrik skriver)
+
+### Insurance
+
+For an insurance, information about incidents is of importance. This can in some cases pose a privacy intrusion. Lets explore a scenario where HYKER could ease the situation.
+
+The scenario revolves around a car rental service. This car rental service consists of a fleet owner and a bunch of cars. The biggest asset of the rental service is, of course, the cars. Lately there has been a number of car thefts. In order to deal with the car theft problem, the owner wants to fit the cars with GPS trackers, so that the insurance company can see what has happened. The customers position being known by the car rental company and the insurance company all the time would be a privacy infringement and would hurt the public image of the company.
+
+The solution can be a trust based security model. In day-to-day use, the car broadcasts an encrypted position that only the driver can read. If a car is stolen, the decryption key can be shared with the insurance company to prove the cusomers innosence. The decision of when to allow the rental company access to data needs to be in the hand of the customer, otherwise he or she can never know if the position is private. This is a clear scenario where trust is the main security concern. HYKER easily lets you build systems with a trust model where you can add parties retroactively.
+
+
 ### Surveillance
+[TODO]
 
 ### Home Care
-ex apartment keys for home services by nurse
+[TODO]
 
 ### Smart City
+[TODO]
 
 ### General IoT
+[TODO]
 
 ### Manufacturing
+[TODO]
 
 
 
