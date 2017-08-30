@@ -90,7 +90,7 @@ As this information can be sensitive it is important for the vehicle to be able 
 
 This is a basic example of the security needed in a self-organizing system where agents can reach consensus in a distributed way. It also suggests how to restrict propagation of sensitive information without human administration.
 
-In scenario like this, with a shared infrastructure that is constantly changing, security will be unobtainable usin traditional ifrastructure-based methods. Instead we will need a trust based model like HYKER.
+In scenario like this, with a shared infrastructure that is constantly changing, security will be unobtainable using traditional ifrastructure-based methods. Instead we will need a trust based model like HYKER.
 
 ### Predictive maintenance
 
@@ -98,7 +98,10 @@ In the simplest form of predictive maintenance, where all of the infrastucture i
 
 But as soon as we start to enter more evolved scenarios, such as predicive maintenance as a service, military operations, or critical infrastructure, we start having to deal with the questions posed above. What part of the system is exposed to third parties, does the system use any kinnd of cloud service, who is collaboratively using data, and so on. A single RPM value from an engine is probably not sensitive at all, but aggregated data from continuous predictive maintenance can be powerful information mapping the properties, systems and current state of an organization. This is where a trust based security model can be of help.
 
-Take a critical infrastructure example: a powerplant. 
+Take a critical infrastructure example: a powerplant. The powerplant uses one firm to conduct the automatic infrastructure surveillance, and various contractors to repair and replace parts. This means that we
+have many
+
+An operation like this world be difficult to propely secure with traditional techniques, since you would have to put a lot of unneccecary trust in the different parties. With a trust base security model like HYKER however, it would be alot easier since you can selectively pick what parties should be trusted with what data on a very granular level.
 
 ### Logistgics
 
