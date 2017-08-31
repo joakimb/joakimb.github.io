@@ -381,16 +381,6 @@ In conclusion, object security enables end-to-end security without preventing pr
 ### The HYKER role
 With HYKER you can select your own trust model, without having to adapt it to the topology of your system. This is enabled through the combination of end-to-end security, retroactive access control and delegation of control.
 
-
-
-
-### Signal
-
-
-![E2EE Comparison]({{ site.url }}/images/comparison.png)
-
-**E2EE Comparison**
-
 ## Conclusion
 
 The message of this article is quite simple and clear: Use end-to-end encryption when data owners and system owners are not the same group of people. 
