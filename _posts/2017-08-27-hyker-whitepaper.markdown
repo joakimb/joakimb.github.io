@@ -100,16 +100,15 @@ HYKER solves this through a concept we call __retroactive access control__. This
 
 It is easy to wind up in a binary world when reasoning about end-to-end vs hop-by-hop. Especially when considering access control. In systems that are fully hop-by-hop, the central service is in full control. In systems that are fully end-to-end, the end nodes are in full control.
 
-We have talked about why you might not want to give full control to a central server. There are also cases where you don't want full control in the end nodes either. Take a look at the picture below.
+We have talked about why you might not want to give full control to a central server. There are also cases where you don't want full control in the end nodes either. An example could be an enterprise communication platform where a decentralized security model with elevated control for middle managers could be desired.
 
-This picture illustrates the differences between centralized, decentralized and distributed systems.
+Take a look at the picture below. This picture illustrates the differences between centralized, decentralized and distributed systems.
 
 ![Trust Models]({{ site.url }}/images/trust-model.jpg)
 
+We solve the binary situation by using delegated access control, making a combination of distributed, decentralized and centralized trust models possible.
 
-We solve this using delegated access control, making a combination of distributed, decentralized and centralized trust models possible.
-
-Delegated access control is...
+Delegated access control is a concept where an end-node can voluntairily delegate permission of key sharing to any other node. If an emplyee delegates the decryption key responsibility to the nearest manager, that manager gains the posibillity to let other employees access the data. Another example is an IoT sensor which should not have any say in who can access the information. That sensor can delegate the access control to the sensor owner or a group of owners.
 
 ## Example Use Cases
 
