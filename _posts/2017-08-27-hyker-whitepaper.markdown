@@ -112,16 +112,6 @@ Delegated access control is a concept where an end-node can voluntairily delegat
 
 ## Example Use Cases
 
-### Autonomous Vehicles
-
-Autonomous vehicles are going to communicate alot. The most basic form of communication is car-to-car, where vehicles share things like current speed and direction, known obstacles, etc. with nearby vehicles. If the vechicle is part of a fleet, it will also have to be able to communicate things like current position and payload to a traffic management system.
-
-As this information can be sensitive it is important for the vehicle to be able to set rules for how the data propagates and with whom it is shared. That is, detected obstacles can be public data, position and heading made available to nearby vehicles, and routing plans are shared only with associated vehicles (e.g. within the same fleet). The groups formed will be of varying dynamicity; the nearby-vehicles-group will be highly dynamic while the fleet remains fairly consistent. The forming of these groups, and the maintaining of a healthy state over time by including and excluding members, is a central problem for autonomous systems as agents need to trust the consistency of such groups in order to trust the data.
-
-This is a basic example of the security needed in a self-organizing system where agents can reach consensus in a distributed way. It also suggests how to restrict propagation of sensitive information without human administration.
-
-In scenario like this, with a shared infrastructure that is constantly changing, security will be unobtainable using traditional ifrastructure-based methods. Instead we will need a trust based model like HYKER.
-
 ### Predictive maintenance
 
 In the simplest form of predictive maintenance, where all of the infrastucture is owned by the same company that conducts the maintenance and the data is not sensitive, there is no place for HYKER. Traditional security will do just fine.
@@ -138,7 +128,7 @@ In a recent [report](https://www.foi.se/en/pressroom/news/news-archive/2017-08-2
 We dont belive in the proposed solution which would bring us back to the 90:s. Instead we belive in a proper security model.
 
 ### Telco messaging
-Data flows through the network of a Telco, but it is not in a single line. The systems are complex networks of communication links and relaying nodes, routers, servers, data storages etc. Many from different 3rd party suppliers. Each link and each node is usually protected with perimeter security models, like encrypted tunnels, SSL/TLS protocols, etc and the nodes have their access control, locked down ports etc. This is network security, or hop-by-hop security. Data is encrypted in transit over a link, but decrypted into clear text in the node and re-encrypted for the next link.
+Telco systems are complex networks of communication links, relaying nodes, routers, servers, data storages etc. Many of these nodes are from different 3rd party suppliers. Each link and each node is usually protected with perimeter security models, like encrypted tunnels, SSL/TLS protocols, etc. This is network security, or hop-by-hop security. Data is encrypted in transit over a link, but decrypted into clear text in the node and re-encrypted for the next link.
 
 This means that the Telco, and the Telco customers, must trust each and every node, the staff that has access to the node and the developer and supplier of this node.
 
@@ -152,38 +142,21 @@ Extended offering
 A Telco that sells connectivity and capacity to transmit sensitive data for a client can extend their offerings with HYKER end-to-end encryption and managed trust. This can be done in different ways depending on the business models of the Telco. 
 
 #### Some general examples:
- * You can different on security level, with a premium communication service that is fully end-to-end protected in an unbroken chain, even if you share network resources with other Telcos. You can be the most secure communication link that the customer doesn’t have to trust from a data access point of view.
+
+ * You can differentate offers on security level, with a premium communication service that is fully end-to-end protected, even when you share network resources with other Telcos. You can be the most secure communication link that the customer doesn’t have to trust from a data access point of view.
  * You can provide service and application developer partners with a new security tool that protects their data through the full data lifecycle.
  * You can offer storage or cloud services to customers with sensitive information. You store their encrypted data, but have no access to keys and thus no access to the data itself.
- * If the Telco provide message broker services like MQTT for IoT, HYKER uniquely adds an end-to-end encryption layer that fully follows the traffic patterns of one-to-many publish-subscribe communication, enabling a data producer to encrypt the data without knowing the recipient(s).
+ * If the Telco provides message broker services, like MQTT servers for IoT, HYKER uniquely adds an end-to-end encryption layer that fully follows the traffic patterns of one-to-many publish-subscribe communication, enabling a data producer to encrypt the data without knowing the recipient(s).
 
 ### Logistics
-Logistics generates and consumes an abundance of data, from many sources and some of it sensitive or have other business value. Big Data is a huge trend that will have a major impact on logistics business:
 
- * Increasing operational efficiency, for example, by increasing transparency, using resources optimally, and increasing process quality and performance.
- * Improving the customer experience with the result that customer loyalty and customer retention rise, customer groups can be segmented exceptionally well, and customers can be individually spoken to. The enterprise thus optimizes the entire communication with the customer and service.
- * New business models are made possible. Enterprises gain additional sources of revenue.
+Logistics generates and consumes an abundance of data, from many sources and some of it sensitive or have other business value. Big Data is a huge trend that will have a major impact on logistics business.
 
-Big Data also has a huge impact on the operations of the logistics companies themselves, when real-time, high-quality, reliable data and information enable management action. This provides procurement and logistics professionals sizeable cost savings and improvements in performance, speed, and agility. With a strategic data strategy, logistics companies can more effectively:
+Data is the key success factor of big data and as such it is of great value. Logistics systems have many endpoints, for instance, tracking devices on trucks, sensors and tracking devices on goods and containers, driver devices (cell phones, tablets) with work orders and reports, etc. There are also central endpoints like dispatch management terminals, analytics software and so on.
 
- * Secure high-risk cargo
- * Enable direct customer supply chain collaboration
- * Provide supply requirement and maintenance condition predictability
- * Eliminate traffic congestion and environmental pollution
+Since logistics revolves around a hot pot of different systems and actors, data ownership can be a real challenge using traditional security. The important thing is to have control over what data should be accessed by whom and when. Should a customer be able to follow their shipment in real-time? Should trucks be able to communicate directly with other trucks? With some trucks but not all trucks? Organized in groups that changes constantly?
 
-Data is the key success factor and as such it is of great value. You need to have strong security and integrity protection mechanisms that cover a multitude of systems, data producers, technologies and networks. 
-
-All the different subsystems and platforms are hard to control and secure. Every part has it’s own security model and has it’s own management.
-
-The important thing is to have full control over what data should be accessed by whom and when. Should a customer be able to follow their shipment in real-time? Should trucks be able to communicate directly with other trucks? With some trucks but not all trucks? Organized in groups that changes constantly?
-
-HYKER provides a technology where data is protected in an unbroken chain from the data producer to the data consumer, in transit, at rest and over time, independent of network technology. A form of end-to-end encryption technology but with managed trust and data access control.
-
-Instead of having trust distributed and delegated as a result of the different network and technology suppliers models, the customer can take full control over the system and manage trust to best suit the security needs and logics of their application.
-
-The logistics system has many endpoints, for instance, tracking devices on trucks, sensors and tracking devices on goods and containers, driver devices (cell phones, tablets) with work orders and reports, etc. There are also central endpoints like dispatch management terminals, analytics software and so on.
-
-HYKER provide drop-in modules to be integrated in all endpoint applications that should communicate securely. A simple step to take full control over trust and protecting the full data lifecycle, disregarding network technology or if the data is in transfer or at rest, over time.
+Instead of having trust distributed and delegated as a result of the different network and technology suppliers models, the customer can use HYKER to take full control over the system and manage trust to best suit the security needs and logics of their application.
 
 ### Insurance
 
@@ -193,9 +166,15 @@ The scenario revolves around a car rental service. This car rental service consi
 
 The solution can be a trust based security model. In day-to-day use, the car broadcasts an encrypted position that only the driver can read. If a car is stolen, the decryption key can be shared with the insurance company to prove the cusomers innosence. The decision of when to allow the rental company access to data needs to be in the hand of the customer, otherwise he or she can never know if the position is private. This is a clear scenario where trust is the main security concern. HYKER easily lets you build systems with a trust model where you can add parties retroactively.
 
+### Autonomous Vehicles
 
-### Data access layer of cloud IoT platform
-[TODO] CT-IoT
+Autonomous vehicles are going to communicate alot. The most basic form of communication is car-to-car, where vehicles share things like current speed and direction, known obstacles, etc. with nearby vehicles. If the vechicle is part of a fleet, it will also have to be able to communicate things like current position and payload to a traffic management system.
+
+As this information can be sensitive it is important for the vehicle to be able to set rules for how the data propagates and with whom it is shared. That is, detected obstacles can be public data, position and heading made available to nearby vehicles, and routing plans are shared only with associated vehicles (e.g. within the same fleet). The groups formed will be of varying dynamicity; the nearby-vehicles-group will be highly dynamic while the fleet remains fairly consistent. The forming of these groups, and the maintaining of a healthy state over time by including and excluding members, is a central problem for autonomous systems as agents need to trust the consistency of such groups in order to trust the data.
+
+This is a basic example of the security needed in a self-organizing system where agents can reach consensus in a distributed way. It also suggests how to restrict propagation of sensitive information without human administration.
+
+In scenario like this, with a shared infrastructure that is constantly changing, security will be unobtainable using traditional ifrastructure-based methods. Instead we will need a trust based model like HYKER.
 
 <!---
 ## A deeper cryptographical intro
