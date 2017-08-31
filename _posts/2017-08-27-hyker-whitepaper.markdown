@@ -137,8 +137,33 @@ A Telco that sells connectivity and capacity to transmit sensitive data for a cl
  * You can offer storage or cloud services to customers with sensitive information. You store their encrypted data, but have no access to keys and thus no access to the data itself.
  * If the Telco provide message broker services like MQTT for IoT, HYKER uniquely adds an end-to-end encryption layer that fully follows the traffic patterns of one-to-many publish-subscribe communication, enabling a data producer to encrypt the data without knowing the recipient(s).
 
-### Logistgics
-[TODO] (fredrik skriver)
+### Logistics
+Logistics generates and consumes an abundance of data, from many sources and some of it sensitive or have other business value. Big Data is a huge trend that will have a major impact on logistics business:
+
+ * Increasing operational efficiency, for example, by increasing transparency, using resources optimally, and increasing process quality and performance.
+ * Improving the customer experience with the result that customer loyalty and customer retention rise, customer groups can be segmented exceptionally well, and customers can be individually spoken to. The enterprise thus optimizes the entire communication with the customer and service.
+ * New business models are made possible. Enterprises gain additional sources of revenue.
+
+Big Data also has a huge impact on the operations of the logistics companies themselves, when real-time, high-quality, reliable data and information enable management action. This provides procurement and logistics professionals sizeable cost savings and improvements in performance, speed, and agility. With a strategic data strategy, logistics companies can more effectively:
+
+ * Secure high-risk cargo
+ * Enable direct customer supply chain collaboration
+ * Provide supply requirement and maintenance condition predictability
+ * Eliminate traffic congestion and environmental pollution
+
+Data is the key success factor and as such it is of great value. You need to have strong security and integrity protection mechanisms that cover a multitude of systems, data producers, technologies and networks. 
+
+All the different subsystems and platforms are hard to control and secure. Every part has it’s own security model and has it’s own management.
+
+The important thing is to have full control over what data should be accessed by whom and when. Should a customer be able to follow their shipment in real-time? Should trucks be able to communicate directly with other trucks? With some trucks but not all trucks? Organized in groups that changes constantly?
+
+HYKER provides a technology where data is protected in an unbroken chain from the data producer to the data consumer, in transit, at rest and over time, independent of network technology. A form of end-to-end encryption technology but with managed trust and data access control.
+
+Instead of having trust distributed and delegated as a result of the different network and technology suppliers models, the customer can take full control over the system and manage trust to best suit the security needs and logics of their application.
+
+The logistics system has many endpoints, for instance, tracking devices on trucks, sensors and tracking devices on goods and containers, driver devices (cell phones, tablets) with work orders and reports, etc. There are also central endpoints like dispatch management terminals, analytics software and so on.
+
+HYKER provide drop-in modules to be integrated in all endpoint applications that should communicate securely. A simple step to take full control over trust and protecting the full data lifecycle, disregarding network technology or if the data is in transfer or at rest, over time.
 
 ### Insurance
 
