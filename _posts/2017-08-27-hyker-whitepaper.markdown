@@ -145,26 +145,12 @@ The scenario revolves around a car rental service. This car rental service consi
 The solution can be a trust based security model. In day-to-day use, the car broadcasts an encrypted position that only the driver can read. If a car is stolen, the decryption key can be shared with the insurance company to prove the cusomers innosence. The decision of when to allow the rental company access to data needs to be in the hand of the customer, otherwise he or she can never know if the position is private. This is a clear scenario where trust is the main security concern. HYKER easily lets you build systems with a trust model where you can add parties retroactively.
 
 
-### Surveillance
-[TODO]
-
-### Home Care
-[TODO]
-
-### Smart City
-[TODO]
-
-### General IoT
-[TODO]
-
-### Manufacturing
-[TODO]
-
-
+### Data access layer of cloud IoT platform
+[TODO] CT-IoT
 
 ## A deeper cryptographical intro
 
-## The why (the cause for the new situation)
+### The why (the cause for the new situation)
 
 An important cause for security moving from the back to beeing pronounciated is the booming of cloud computing. Most systems are now fully or partly cloud based, which is great for efficiency and feature reasons. The downside is that the term "The Cloud" really only means "Someone elses computer". Using the cloud means bringing in more parties in the system, which have to be trusted. In the security business, we call that an increased attack surface. When changing a system by adding a cloud component, your system can now also be attacked in that part of the system, which you might not be in control over.
 
@@ -180,17 +166,7 @@ A trust based security model is is illustrated in the last pane. Here, you still
 
 **Cloud History**
 
-
-
-## The why, revisited
-
-Lets touch the cloud again. Why do we use the cloud. Because it is cheap. using the cloud could be a significant cost saving. but if you use the traditional hop-by-hop model, it is a calculated risk. 
-
-using hop-by-hop was fine in the last decade, since you usually owned the entire system, and the users data was part of this closed system. 
-
-so people have continued to use this model when migrating to the cloud, knowing the risks, but deeming the cost savings to be of higher priority.
-
-when more sensitive data is now moved to the cloud, and 
+Using a security model based on trust can allow an organization to use the cloud with all the benefits, without sacrificing control.
 
 ## The actors (who is really part of the system)
 
