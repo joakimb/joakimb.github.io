@@ -97,9 +97,19 @@ HYKER solves this through a concept we call __retroactive access control__. This
 The combination of end-to-end encryption and retroactive access can no be found in any other product than HYKER.
 
 ### Access Control Delegation
-[TODO]
+
+It is easy to wind up in a binary world when reasoning about end-to-end vs hop-by-hop. Especially when considering access control. In systems that are fully hop-by-hop, the central service is in full control. In systems that are fully end-to-end, the end nodes are in full control.
+
+We have talked about why you might not want to give full control to a central server. There are also cases where you don't want full control in the end nodes either. Take a look at the picture below.
+
+This picture illustrates the differences between centralized, decentralized and distributed systems.
 
 ![Trust Models]({{ site.url }}/images/trust-model.jpg)
+
+
+We solve this using delegated access control, making a combination of distributed, decentralized and centralized trust models possible.
+
+Delegated access control is...
 
 ## Example Use Cases
 
@@ -236,7 +246,7 @@ The key question you should ask yourself when choosing a security model is: "wha
  * Does the user have an initiative to trust the service?
  - If the user should not be forced to trust the service provider with their data, then end-to-end is the way to go. This is especially true for cloud systems complosed of several entities, such as for example AWS, docker, etc.
 
-In summary, if there is no sesitive data, or the data is collectively owned within a closed system with mutual trust, you are fine with traditional security. If however, you have sendsitive data, and the user should not have to trust all of the prts of the service, you want end-to-end.
+In summary, if there is no sesitive data, or the data is collectively owned within a closed system with mutual trust, you are fine with traditional security. If however, you have sendsitive data, and the user should not have to trust all of the parts of the service, you want end-to-end.
 
 ## Appendix
 
