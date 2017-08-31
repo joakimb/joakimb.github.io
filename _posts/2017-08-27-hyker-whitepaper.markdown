@@ -12,7 +12,7 @@ The situation has changed. Nowadays, security breaches is front page news on the
 
 ### The HYKER mission
 
-HYKER takes a strike at securing the data in a system, as opposed to securing the infrastrucure. HYKER separates the access control of data from the process of sending it. A HYKER message does not have an explicit addressee. There is no recipient, and nobody can decrypt it. Instead of encrypting for a known receiver, the message is tagged with metadata of how to aquire the key. It is then up to a comsuming party to request access to the decrypting key.
+HYKER takes a strike at securing the data in a system, as opposed to securing the infrastrucure. HYKER separates the access control of data from the process of sending it. A message protedcted by HYKER does not have an explicit addressee. There is no recipient, and nobody can decrypt it. Instead of encrypting for a known receiver, the message is tagged with metadata of how to aquire the key. It is then up to a comsuming party to request access to the decrypting key.
 
 This makes the system highly suitable for pub-sub systems, especially when you have multiple parties involved, or the data is stored over time, or people in the sysem come and go.
 
@@ -27,13 +27,19 @@ Want to encrypt something? Good, go get a state of the art implementation of a w
 
 ### Key insight: Key Distribution is hard
 
-So, you have a good way of encrypting your data. How do you obtain the key? In simple systems you can use a classic PKI? But what if you don't know the reciever at send time? What if the reciever belongs to another organization that does not use a PKI? What if the keys needs to be replicated?
+So, you have a good way of encrypting your data. How do you obtain the key? In simple systems you can use a classic PKI. But what if you don't know the reciever at send time? What if the reciever belongs to another organization that does not use a PKI? What if the keys needs to be replicated?
 
-Key distribution and key management are genrally recognized as problems with no one-size-fits-all solution. This is a big reason for why securing a system is difficult. The owner of the keys controls tha data, and key management controls key ownership. 
+Key distribution and key management are generally recognized as problems with no one-size-fits-all solution. This is a big reason for why securing a system is difficult. The owner of the keys controls tha data, and key management controls key ownership. 
 
 ### Key insight: Access Control is all about trust
 
-parts of a system, select what you want to trust not what you need to trust. This way yoyr system design and security model is not dependent on each other, you dont need to trust a part of your system just because data flows through it.
+Since access control governs access to data, it is very closely related to trust. Access control separates authorized entities from outsiders. Therefore, the part of the system that runs the access control is all powerful, if it is compromised or erroneously configured it can give access to anything it wants. Even itself.
+
+In traditional __hop-by-hop__ systems, access control is based on a set of rules. There are various parts of a system which holds data, and they give access based on the given rule set. This rule set can be circumvented, either by a configuration error or mischevious behaviour from external attackers or insiders. In a system like this you are forced to trust the data holders since they have full power.
+
+If the access control is instead based on __end-to-end__ cryptography, you do not need to trust the data holders with access contol. You can strip them of all power and handle access control through cryptography instead of rules.
+
+HYKER believes in a security design where you can select what you want to trust not what you need to trust. This way your system design and security model is not dependent on each other, you dont need to trust a part of your system just because data flows through it.
 
 ## Secure communication
 
