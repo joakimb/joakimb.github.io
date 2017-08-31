@@ -83,8 +83,12 @@ Data is data, unrelated to what system it flows through. Therefore we need to fo
 The HYKER innovation consists of the separation of encryption and access control. This is the enabler for trust based security, where you can select trusted parts of a system based on the data, not on how the infrastructure is designed. It also enables voulontairy delegation of control and retroactive access.
 
 ### Retroactive access
+[TODO]
 
 ### Access Control Delegation
+[TODO]
+
+![Trust Models]({{ site.url }}/images/trust-model.jpg)
 
 ## Example Use Cases
 
@@ -168,25 +172,11 @@ A trust based security model is is illustrated in the last pane. Here, you still
 
 Using a security model based on trust can allow an organization to use the cloud with all the benefits, without sacrificing control.
 
-## The actors (who is really part of the system)
+### The actors (who is really part of the system)
 
-we have stacking layers of trust. in an optimal secure system, only users are trusted. the next level of trust is the organizations itself, e.g. a company where the user works. the next level is the service provider, e.g. an online email service. after that, we get the email providers storage cloud. then the operating system used for storage 
+A system always has many different views of trust. The users have their view of what they trust, the system amintainers their, and so on. This means stat we have stacking layers of trust. In an optimally secure system, end users are the only trusted entities. The next level of trust can be the organizations itself, e.g. a company where the user works. After that it can be the the service provider, e.g. an online email service. After that, we get the email providers storage cloud, then the operating system used for storage and so on.
 
-we are not saying: dont trust your employer, dont trust anyone. What we are saying is "dont make the entire internet a trusted part of your system. Use all the services you want, but dont treat them like inner circle members."
-
-## The data (what do you want/need to protect)
-
-an important 
-
-## The enemy (who are you protecting against)
-
-The reason for implementing any kind of computer security is a percieved threat of data leakage, system downtime, data corruption, and other similat scenarios.
-People often see the "Hacker" as the embodiment of this threat.
-This is a narrow scope.
-
-Threats are not neccecarily malicious. They can also be be errors in handling and similar situations.
-Threats are also not only external. Insiders are also potential threats.
-With the expansion of the enterprise into the cloud, this becomes an imortant aspect, since you are essentially making the cloud provider an insider if you dont use a proper security model.
+To be able to differentiate between the different layers of trust, a trust based model is needed.
 
 ### A parable
 
@@ -194,10 +184,9 @@ With the expansion of the enterprise into the cloud, this becomes an imortant as
 
 **Apartment Keys Parable**
 
-
 ## The lineup (what are my choices)
 
-The key question you should ask yourself is: "what are my security needs". There is no such thing as "the one correcr model". Below are some questions to answer in order to point yourself in the right direcion.
+The key question you should ask yourself when choosing a security model is: "what are my security needs". There is no such thing as "the one correct model". Below are some questions to answer in order to point yourself in the right direcion.
 
  * Is the system a closed system? 
  - If your system is all within your organization (i.e. no 3rd party services, you can physically touch your servers), and all the user data is owned by the organiztion and not the users themselves, then you might be fine using traditional security (hop by hop and channel security).
@@ -211,10 +200,15 @@ The key question you should ask yourself is: "what are my security needs". There
  * Does the user have an initiative to trust the service?
  - If the user should not be forced to trust the service provider with their data, then end-to-end is the way to go. This is especially true for cloud systems complosed of several entities, such as for example AWS, docker, etc.
 
-In summary, if there is no sesitive data, or the data is collectively owned within a closed system with mutual trust, you are fine with traditional security.
-If however, you have sendsitive data, and the user should not have to trust all of the prts of the service, you want end-to-end.
+In summary, if there is no sesitive data, or the data is collectively owned within a closed system with mutual trust, you are fine with traditional security. If however, you have sendsitive data, and the user should not have to trust all of the prts of the service, you want end-to-end.
 
-### A short system design instroduction
+## The technical perspective
+
+The traditional internet landscape consists of cables and big central servers. Clients pushes and pulls data to and from servers.
+
+The current internet landscape is moving away from that reality, and has been for some time. A large portion of devices, e.g. phones or IoT-devices, communicate over wireless channels. Centralized systems are becoming more and more distributed and devices often communicate directly without a central point.
+
+The changed communication landscape needs a new approach for communication security, and HYKER solves many of the inherent security problems.
 
 When describing a system, we separate the concepts of clients and servers, and connections and storage. In the most simple systems, there exists only clients and they connect directly to each other. This could be for example a walkie-talkie system. 
 
@@ -226,16 +220,6 @@ To wrap up, the core 2 carchteristicts in this context is:
 
  * Are there both clients and servers?
  * Is the communication syncronous or asynchronous.
-
-## Introduction
-
-The traditional internet landscape consists of cables and big central servers. Clients pushes and pulls data to and from servers.
-
-The current internet landscape is moving away from that reality, and has been for some time. A large portion of devices, e.g. phones or IoT-devices, communicate over wireless channels. Centralized systems are becoming more and more distributed and devices often communicate directly without a central point.
-
-The changed communication landscape needs a new approach for communication security, and HYKER solves many of the inherent problems.
-
-## Communication patterns
 
 ### Synchronicity and Asynchronicity
 
@@ -369,11 +353,11 @@ Request-response ones are:
 
 In conclusion, object security enables end-to-end security without preventing proxy operations.
 
-### HYKER
-With HYKER you can select your own trust model, without having to adapt it to the topology of your system.
+### The HYKER role
+With HYKER you can select your own trust model, without having to adapt it to the topology of your system. This is enabled through the combination of end-to-end security, retroactive access control and delegation of control.
 
 
-![Trust Models]({{ site.url }}/images/trust-model.jpg)
+
 
 ### Signal
 
@@ -382,7 +366,7 @@ With HYKER you can select your own trust model, without having to adapt it to th
 
 **E2EE Comparison**
 
-## Intermittent Conclusion
+## Conclusion
 
 The message of this article is quite simple and clear: Use end-to-end encryption when data owners and system owners are not the same group of people. 
 Differentiating between securing the data and securing the infrastructure is essential, otherwise the infrastructure owners become de-facto data owners from a technical perspective. So ask yourself the question: do I care if my organizations data is controlled by ourselves, or is it fine to let external organizations handle our core data?
