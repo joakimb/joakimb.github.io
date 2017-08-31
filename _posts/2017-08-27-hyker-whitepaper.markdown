@@ -69,6 +69,10 @@ This type of security eliminates the need to fully trust every part of the syste
 There are many technologies available for E2E, e.g. [HYKER](https://hyker.io), [PGP](http://openpgp.org), [Signal](https://whispersystems.org) and [OSCoAP](https://tools.ietf.org/html/draft-selander-ace-object-security-05). 
 They all achieve fully secure E2E, but with important differences making them suited for different purposes.
 
+### A parallel
+
+![Apartment keys parable]({{ site.url }}/images/apartments.png)
+
 ## Data Life Cycle Security
 
 ### What is trust?
