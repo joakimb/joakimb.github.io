@@ -45,7 +45,7 @@ HYKER believes in a security design where you can select what you want to trust 
 
 ### How the data is secured
 
-All security is based on conditionally selecting trusted parts of a system. To enforce the security - i.e. the exclusion of untrusted entities - we use the tools, rules and cryptography.
+All security is based on conditionally selecting trusted parts of a system to handle your data. To enforce the security - i.e. the exclusion of untrusted entities - we use the tools, rules and cryptography.
 Rules are prone to human error, or malicious intents.
 Cryptography on the other hand is highly resistant to these flaws.
 
@@ -54,14 +54,14 @@ Cryptography on the other hand is highly resistant to these flaws.
 Most people that have come in contact with computer security have heard about the common techniques for connection security and end node security such as TLS and firewalls.
 
 These technologies are very good technologies, but the purpose is to secure the infrastructure, piece by piece, or as we call it in the industry, __hop-by-hop__ security.
-This means that when for example sending an email, the email is encrypted in transit and in storage, but the parties delivering the mail are able to decrypt the message.
+This means that when for example sending an email, the email is encrypted in transit and in storage, but the parties delivering the email are able to decrypt the message.
 This is a weakness.
 There can be vulnerable parts of the chain; or some part of the chain can be malicious.
 Traditional security models like this are good for securing infrastructure that you own, it is not designed to protect data which does not explicitly belong to the system owner.
 
 #### Securing the data at the end nodes (End-to-End)
 
-When you do not control 100% of the infrastructure - as when using cloud services - or the data does not belong to the system - as in a chat service or a mail system, protecting the infrastructure is not enough.
+When you do not control 100% of the infrastructure - as when using cloud services - or the data does not belong to the system - as in a chat service or an email system, protecting the infrastructure is not enough.
 Additionally, you need to secure the data itself.
 If the data is encrypted at the message sender, and the decryption key is only made available to the intended recipient, you achieve what is called __end-to-end__ security (E2E).
 This type of security eliminates the need to fully trust every part of the system, making for a reduced attack surface and brings data ownership back from the system to the data producer.
@@ -194,7 +194,7 @@ when more sensitive data is now moved to the cloud, and
 
 ## The actors (who is really part of the system)
 
-we have stacking layers of trust. in an optimal secure system, only users are trusted. the next level of trust is the organizations itself, e.g. a company where the user works. the next level is the service provider, e.g. an online mail service. after that, we get the mail providers storage cloud. then the operating system used for storage 
+we have stacking layers of trust. in an optimal secure system, only users are trusted. the next level of trust is the organizations itself, e.g. a company where the user works. the next level is the service provider, e.g. an online email service. after that, we get the email providers storage cloud. then the operating system used for storage 
 
 we are not saying: dont trust your employer, dont trust anyone. What we are saying is "dont make the entire internet a trusted part of your system. Use all the services you want, but dont treat them like inner circle members."
 
