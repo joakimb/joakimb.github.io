@@ -198,6 +198,7 @@ The solution can be a trust based security model. In day-to-day use, the car bro
 ### Data access layer of cloud IoT platform
 [TODO] CT-IoT
 
+<!---
 ## A deeper cryptographical intro
 
 ### The why (the cause for the new situation)
@@ -408,4 +409,4 @@ The message of this article is quite simple and clear: Use end-to-end encryption
 Differentiating between securing the data and securing the infrastructure is essential, otherwise the infrastructure owners become de-facto data owners from a technical perspective. So ask yourself the question: do I care if my organizations data is controlled by ourselves, or is it fine to let external organizations handle our core data?
 
 
-
+--->
