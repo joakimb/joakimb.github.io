@@ -83,7 +83,18 @@ Data is data, unrelated to what system it flows through. Therefore we need to fo
 The HYKER innovation consists of the separation of encryption and access control. This is the enabler for trust based security, where you can select trusted parts of a system based on the data, not on how the infrastructure is designed. It also enables voulontairy delegation of control and retroactive access.
 
 ### Retroactive access
-[TODO]
+
+Imagine an electricy meter in your house. 
+
+When designing a system based on hop-by-hop security, you do not need to worry about know ing all receivers beforehand. The central server can take care of adding additional receivers 
+
+But you have given up the control over your data
+
+To retake control, you can introduce end-to-end securty. But this introcuces another problem.... noadded recipients without resending
+
+HYKER solves this through a concept we call __retroactive access control__. This concept brings the best of both worlds you can have full control over who gets access to your data, but you don't need to resend it.
+
+The combination of end-to-end encryption and retroactive access can no be found in any other product than HYKER.
 
 ### Access Control Delegation
 [TODO]
@@ -227,7 +238,7 @@ The key question you should ask yourself when choosing a security model is: "wha
 
 In summary, if there is no sesitive data, or the data is collectively owned within a closed system with mutual trust, you are fine with traditional security. If however, you have sendsitive data, and the user should not have to trust all of the prts of the service, you want end-to-end.
 
-## The technical perspective
+## Appendix
 
 The traditional internet landscape consists of cables and big central servers. Clients pushes and pulls data to and from servers.
 
