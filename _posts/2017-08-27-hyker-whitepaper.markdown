@@ -84,17 +84,13 @@ The HYKER innovation consists of the separation of encryption and access control
 
 ### Retroactive access
 
-Imagine an electricy meter in your house. 
+Think of a document sharing service, like Dropbox. The amount of data stored in the cloud can grow very large over time. If you want to add people who are allowed to read the documents, how do you do that? How can you keep control over the data without have to re-send it?
 
-When designing a system based on hop-by-hop security, you do not need to worry about know ing all receivers beforehand. The central server can take care of adding additional receivers 
+When designing a system based on hop-by-hop security, you do not need to worry about knowing all receivers beforehand. The central server can take care of adding additional receivers. But in these systems, you give up the control over your data. The central server being able to add recipients is enabled throug letting it control your data, demanding total trust in it.
 
-But you have given up the control over your data
+To retake control, you can introduce end-to-end securty. But this introcuces another problem. In a standard end-to-end security system, the intermediate parties such as a storage server, have no access to the data. This means that the end nodes have no control, resulting in no posibility to add recipients without resending the data. 
 
-To retake control, you can introduce end-to-end securty. But this introcuces another problem.... noadded recipients without resending
-
-HYKER solves this through a concept we call __retroactive access control__. This concept brings the best of both worlds you can have full control over who gets access to your data, but you don't need to resend it.
-
-The combination of end-to-end encryption and retroactive access can no be found in any other product than HYKER.
+HYKER solves this through a concept we call __retroactive access control__. This concept brings the best of both worlds you can have full control over who gets access to your data, but you don't need to resend it. This done through separating the key sharing form the data sharing.
 
 ### Access Control Delegation
 
