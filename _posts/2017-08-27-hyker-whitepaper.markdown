@@ -11,7 +11,7 @@ Security is, and always has been, a basic requirement for quality products. It h
 
 The situation has changed. Nowadays, security breaches are front page news on the most respected newspapers and system builders openly discuss their security model as a part of their marketing.
 
-### The HYKER mission
+### The HYKER model
 
 HYKER takes a strike at securing the data in a system, as opposed to securing the infrastructure. HYKER separates the access control of data from the process of sending it. A message protected by HYKER does not have an explicit addressee. There is no recipient, and nobody can decrypt it. Instead of encrypting it for a known recipient, the message is tagged with metadata of how to acquire the key. It is then up to a consuming party to request access to the decrypting key.
 
