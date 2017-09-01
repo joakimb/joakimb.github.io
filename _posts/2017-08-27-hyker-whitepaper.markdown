@@ -7,62 +7,62 @@ date: 2017-08-04 12:00:00 +0200
 
 ## Introduction
 
-Security is, and always has been, a basic requirement for quality products. It has been part of every serious system since the start of networked computing in late 1900:s and is now part of every mans life with the moving of some parts of our lives to the internet. However, it has always been hidden under the surface. It has not been publicly advertised by neither the media nor the system builders.
+Security is, and always has been, a basic requirement for quality products. It has been a part of every serious system since the start of networked computing in the late 1900s and is now a part of everyone's life having moved some parts of our lives to the internet. However, it has always been hidden under the surface. It has not been publicly advertised by neither the media nor the system builders.
 
-The situation has changed. Nowadays, security breaches are front page news on the most respected newspapers and system builders openly discuss their security model as a part of marketing.
+The situation has changed. Nowadays, security breaches are front page news on the most respected newspapers and system builders openly discuss their security model as a part of their marketing.
 
 ### The HYKER mission
 
-HYKER takes a strike at securing the data in a system, as opposed to securing the infrastructure. HYKER separates the access control of data from the process of sending it. A message protected by HYKER does not have an explicit addressee. There is no recipient, and nobody can decrypt it. Instead of encrypting for a known receiver, the message is tagged with metadata of how to acquire the key. It is then up to a consuming party to request access to the decrypting key.
+HYKER takes a strike at securing the data in a system, as opposed to securing the infrastructure. HYKER separates the access control of data from the process of sending it. A message protected by HYKER does not have an explicit addressee. There is no recipient, and nobody can decrypt it. Instead of encrypting it for a known recipient, the message is tagged with metadata of how to acquire the key. It is then up to a consuming party to request access to the decrypting key.
 
 This makes the system highly suitable for pub-sub systems, especially when you have multiple parties involved, or the data is stored over time, or people in the system come and go.
 
 This is all done using __end-to-end__ encryption, protecting the data in an unbroken chain from producer to consumer. There is no central storage of decryption keys. The important thing is that sensitive data does not touch any part of a system it does not need to.
 
-The security of a certain part of a system is always easy. Use good encryption, install a firewall, separate processes etc. The hard part is getting the overall security good. Being sure that there is no part of the chain that is weaker. HYKER eliminates the need to trust the ultimate security of every part of the chain by focusing on the data instead of the infrastructure. This is done through a trust based security model.
+Securing a certain part of a system is always easy. Using good encryption, installing a firewall, separating processes, etc., are all great ways of doing this. The hard part is getting the __overall__ security good. In other words, being sure that there is no part of the chain that is weaker than the rest. HYKER eliminates the need to trust the ultimate security of every part of the chain by focusing on the data instead of the infrastructure. This is done through a trust based security model.
 
 
 ### Key insight: Encryption is easy
 
-Want to encrypt something? Good, go get a state of the art implementation of a world class algorithm. This is available in a multitude of open source libraries. For free.
+Want to encrypt something? Good, go get a state-of-the-art implementation of a world-class algorithm. This is available in a multitude of open-source libraries. For free.
 
 ### Key insight: Key Distribution is hard
 
-So, you have a good way of encrypting your data. How do you obtain the key? In simple systems, you can use a classic PKI. But what if you don't know the receiver at send time? What if the receiver belongs to another organization that does not use a PKI? What if the keys need to be replicated?
+So, you have a good way of encrypting your data. How do you obtain the key? In simple systems, you can use a classic PKI (Publi Key Infrastructure). But what if you don't know the recipient at the time of sending your data? What if the recipient belongs to another organization that does not use a PKI? What if the keys need to be replicated?
 
-Key distribution and key management are generally recognized as problems with no one-size-fits-all solution. This is a big reason for why securing a system is difficult. The owner of the keys controls the data, and key management controls key ownership. 
+Key distribution and key management are generally recognized as problems with no one-size-fits-all solution. This is a big reason why securing a system is difficult. The owner of the keys controls the data, and key management controls key ownership. 
 
 ### Key insight: Access Control is all about trust
 
-Since access control governs access to data, it is very closely related to trust. Access control separates authorized entities from outsiders. Therefore, the part of the system that runs the access control is all powerful, if it is compromised or erroneously configured it can give access to anything it wants. Even itself.
+Since access control governs access to data, it is very closely related to trust. Access control separates authorized entities from outsiders. Therefore, the part of the system that runs the access control is all powerful, if it is compromised or erroneously configured it can give access to anything it wants - even itself.
 
-In traditional __hop-by-hop__ systems, access control is based on a set of rules. There are various parts of a system which holds data, and they give access based on the given rule set. This rule set can be circumvented, either by a configuration error or mischevious behavior from external attackers or insiders. In a system like this, you are forced to trust the data holders since they have full power.
+In traditional __hop-by-hop__ systems, access control is based on a set of rules. There are various parts of a system which hold data, and they give access based on the given rule set. This rule set can be circumvented, either by a configuration error or mischievous behavior from external attackers or insiders. In a system like this, you are forced to trust the data holders since they have full power.
 
 If the access control is instead based on __end-to-end__ cryptography, you do not need to trust the data holders with access control. You can strip them of all power and handle access control through cryptography instead of rules.
 
-HYKER believes in a security design where you can select what you want to trust not what you need to trust. This way your system design and security model is not dependent on each other, you don't need to trust a part of your system just because data flows through it.
+HYKER believes in a security design where you can select what you __want__ to trust - not what you __need__ to trust. This way your system design and security model are not dependent on each other, you don't need to trust a part of your system just because data flows through it.
 
 ## Secure communication
 
 ### How the data is secured
 
-All security is based on conditionally selecting trusted parts of a system to handle your data. To enforce the security - i.e. the exclusion of untrusted entities - we use the tools, rules, and cryptography.
-Rules are prone to human error, or malicious intents.
+All security is based on conditionally selecting trusted parts of a system to handle your data. To enforce security - i.e. the exclusion of untrusted entities - we use tools, rules, and cryptography.
+Rules are prone to human error or malicious intent.
 Cryptography, on the other hand, is highly resistant to these flaws.
 
 #### Securing every part of the system (Hop-by-Hop)
 
-Most people that have come in contact with computer security have heard about the common techniques for connection security and end node security such as TLS and firewalls.
+Most people that have come in contact with computer security have heard about the common techniques for connection security and end-node security such as TLS and firewalls.
 
-These technologies are very good technologies, but the purpose is to secure the infrastructure, piece by piece, or as we call it in the industry, __hop-by-hop__ security.
+These technologies are very good, but the purpose is to secure the infrastructure, piece by piece, or as we call it in the industry, __hop-by-hop__.
 This means that when for example sending an email, the email is encrypted in transit and in storage, but the parties delivering the email are able to decrypt the message.
 This is a weakness.
-There can be vulnerable parts of the chain, or some part of the chain can be malicious.
-Traditional security models like this are good for securing infrastructure that you own, it is not designed to protect data which does not explicitly belong to the system owner.
+There can some parts of the chain that are vulnerable, and others that are malicious.
+While traditional security models like this are good for securing infrastructure that is owned in its entirety, it is not designed to protect data which does not explicitly belong to the owner of the system.
 
 #### Securing the data at the end nodes (End-to-End)
 
-When you do not control 100% of the infrastructure - as when using cloud services - or the data does not belong to the system - as in a chat service or an email system, protecting the infrastructure is not enough.
+When you do not control 100% of the infrastructure - as when using cloud services, or when the data does not belong to the system (e.g. chat services or email systems) - protecting the infrastructure is not enough.
 Additionally, you need to secure the data itself.
 If the data is encrypted at the message sender, and the decryption key is only made available to the intended recipient, you achieve what is called __end-to-end__ security (E2E).
 This type of security eliminates the need to fully trust every part of the system, making for a reduced attack surface and brings data ownership back from the system to the data producer.
@@ -80,61 +80,61 @@ They all achieve fully secure E2E, but with important differences making them su
 
 Trust is related to abilities. What abilities do I trust a certain party with?
 
-In a secure system, trusted parties are those who have access to data, i.e. they are able to obtain decryption keys. This entails that in a __hop-by-hop__ system, all hops are trusted. In __end-to-end__ systems, however, only the end points are trusted. This means that we should opt for __end-to-end__ based systems if there is sensitive data, or data not owned by the system administrators, involved.
+In a secure system, trusted parties are those who have access to data, i.e. those who are able to obtain decryption keys. This entails that in a __hop-by-hop__ system, all hops are trusted. In __end-to-end__ systems, however, only the end points are trusted. This means that we should opt for an __end-to-end__ based system if it involves sensitive data, or data not owned by the system administrators.
 
 ### Data life cycle
 
 Data is data, unrelated to what system it flows through. Therefore we need to focus on the full data lifecycle, from production to consumption, over time, using any system. This is what HYKER does.
-The HYKER innovation consists of the separation of encryption and access control. This is the enabler for trust based security, where you can select trusted parts of a system based on the data, not on how the infrastructure is designed. It also enables voluntary delegation of control and retroactive access.
+The HYKER innovation consists of the separation of encryption and access control. This is the enabler for trust-based security, where you can select trusted parts of a system based on the data, not on how the infrastructure is designed. It also enables voluntary delegation of control and retroactive access.
 
 ### Retroactive access
 
-Think of a document sharing service, like Dropbox. The amount of data stored in the cloud can grow very large over time. If you want to add people who are allowed to read the documents, how do you do that? How can you keep control over the data without having to re-send it?
+Think of a document sharing service, like Dropbox. The amount of data stored in the cloud can grow very large over time. If you want to add people who are allowed to read the documents, how do you do that? How can you keep control over the data without having to resend it?
 
-When designing a system based on hop-by-hop security, you do not need to worry about knowing all receivers beforehand. The central server can take care of adding additional receivers. But in these systems, you give up the control over your data. The central server being able to add recipients is enabled through letting it control your data, demanding total trust in it.
+When designing a system based on hop-by-hop security, you do not need to worry about knowing all recipients beforehand. The central server can take care of adding additional recipients. But in these systems, you give up the control over your data. The central server being able to add recipients is enabled to do so through letting it control your data, demanding total trust in it.
 
-To retake control, you can introduce end-to-end security. But this introduces another problem. In a standard end-to-end security system, the intermediate parties such as a storage server, have no access to the data. This means that the end nodes have no control, resulting in no possibility to add recipients without resending the data. 
+To retake control, you can introduce end-to-end security. But this introduces another problem. In a standard end-to-end security system, the intermediate parties (e.g. storage servers), have no access to the data. This means that the end nodes have no control, resulting in no possibility to add recipients without resending the data. 
 
-HYKER solves this through a concept we call __retroactive access control__. This concept brings the best of both worlds you can have full control over who gets access to your data, but you don't need to resend it. This done through separating the key sharing from the data sharing.
+HYKER solves this through a concept we call __retroactive access control__. This concept brings the best of both worlds: you can have full control over who gets access to your data, __and__ you don't have to resend it. This is done through separating the key sharing from the data sharing.
 
 ### Access Control Delegation
 
-It is easy to wind up in a binary world when reasoning about end-to-end vs hop-by-hop. Especially when considering access control. In systems that are fully hop-by-hop, the central service is in full control. In systems that are fully end-to-end, the end nodes are in full control.
+It is easy to wind up in a binary world when reasoning about end-to-end vs hop-by-hop, especially when considering access control. In systems that are fully hop-by-hop, the central service is in full control. In systems that are fully end-to-end, the end nodes are in full control.
 
 We have talked about why you might not want to give full control to a central server. There are also cases where you don't want full control in the end nodes either. An example could be an enterprise communication platform where a decentralized security model with elevated control for middle managers could be desired.
 
-Take a look at the picture below. This picture illustrates the differences between centralized, decentralized and distributed systems.
+Take a look at the picture below. This picture illustrates the differences between centralized, decentralized, and distributed systems.
 
 ![Trust Models]({{ site.url }}/images/trust-model.jpg)
 
-We solve the binary situation by using delegated access control, making a combination of distributed, decentralized and centralized trust models possible.
+We solve the binary situation by using delegated access control, making a combination of distributed, decentralized, and centralized trust models possible.
 
-Delegated access control is a concept where an end-node can voluntarily delegate permission of key sharing to any other node. If an employee delegates the decryption key responsibility to the nearest manager, that manager gains the possibility to let other employees access the data. Another example is an IoT sensor which should not have any say in who can access the information. That sensor can delegate the access control to the sensor owner or a group of owners.
+Delegated access control is a concept where an end node can voluntarily delegate permission of key sharing to any other node. If an employee delegates the decryption key responsibility to the nearest manager, that manager gains the possibility to let other employees access the data. Another example is an IoT sensor which should not have any say in who can access the information. That sensor can delegate the access control to the sensor owner or a group of owners.
 
-## Example Use Cases
+## Example use cases
 
 ### Predictive maintenance
 
 In the simplest form of predictive maintenance, where all of the infrastructure is owned by the same company that conducts the maintenance and the data is not sensitive, there is no place for HYKER. Traditional security will do just fine.
 
-But as soon as we start to enter more evolved scenarios, such as predictive maintenance as a service, military operations, or critical infrastructure, we start having to deal with the questions posed above. What part of the system is exposed to third parties, does the system use any kind of cloud service, who is collaboratively using data, and so on. A single RPM value from an engine is probably not sensitive at all, but aggregated data from continuous predictive maintenance can be powerful information mapping the properties, systems and the current state of an organization. An example of that predictive maintenance data is considered sensitive is available in a recent [report from ICF](https://www.icf.com/-/media/files/icf/white-papers/2017/aviation_aerospace_ahm_aircraft_big_data_analytics_health_monitoring_wp.pdf), where the question of data ownership is explored and deemed central. This is where a trust based security model can be of help.
+But as soon as we start to enter more evolved scenarios, such as predictive maintenance-as-a-service, military operations, or critical infrastructure, we start having to deal with the questions posed above. What part of the system is exposed to third parties? Does the system use any kind of cloud service? Who is collaboratively using data? The list goes on. A single RPM value from an engine is probably not sensitive at all, but aggregated data from continuous predictive maintenance can be powerful information mapping the properties, systems, and the current state of an organization. An example of predictive maintenance data being considered sensitive is available in a recent [report from ICF](https://www.icf.com/-/media/files/icf/white-papers/2017/aviation_aerospace_ahm_aircraft_big_data_analytics_health_monitoring_wp.pdf), where the question of data ownership is explored and deemed central. This is where a trust-based security model can be of help.
 
 Take a critical infrastructure example: a power plant. The power plant uses one firm to conduct the automatic infrastructure surveillance, and various contractors to repair and replace parts. This means that we have many different parties acting in a shared system with different data access rights.
 
-An operation like this would be difficult to properly secure with traditional techniques since you would have to put a lot of unnecessary trust in the different parties. With a trust based security model like HYKER however, it would be easier since you can selectively pick what parties should be trusted with what data on a very granular level.
+An operation like this would be difficult to properly secure with traditional techniques since you would have to put a lot of unnecessary trust in the different parties. With a trust based security model like HYKER however, it would be much easier since you can selectively pick what parties should be trusted with what data on a very granular level.
 
-In a recent [report](https://www.foi.se/en/pressroom/news/news-archive/2017-08-29-risks-with-online-societal-services.html) from the Swedish Defence Research Agency, it is concluded that the current computer security at Swedish critical infrastructure, like power plants etc., is severely substandard. The report suggests that cutting the cord, i.e. disconnecting all infrastructure from the internet, is a viable solution.
+In a recent [report](https://www.foi.se/en/pressroom/news/news-archive/2017-08-29-risks-with-online-societal-services.html) from the Swedish Defence Research Agency, it is concluded that the current computer security at Swedish critical infrastructure (power plants etc.) is severely substandard. The report suggests that cutting the cord, i.e. disconnecting all infrastructure from the internet, is a viable solution.
 
-We don't believe in the proposed solution which would bring us back to the 90:s. Instead, we believe in a proper security model.
+We don't believe in the proposed solution which would bring us back to the 90s. Instead, we believe in a proper security model.
 
 ### Telco messaging
-Telco systems are complex networks of communication links, relaying nodes, routers, servers, data storages etc. Many of these nodes are from different 3rd party suppliers. Each link and each node is usually protected with perimeter security models, like encrypted tunnels, SSL/TLS protocols, etc. This is network security, or hop-by-hop security. Data is encrypted in transit over a link, but decrypted into clear text in the node and re-encrypted for the next link.
+Telco systems are complex networks of communication links, relaying nodes, routers, servers, data storages, etc. Many of these nodes are from different 3rd party suppliers. Each link and each node is usually protected with perimeter security models, like encrypted tunnels, SSL/TLS protocols, etc. This is network security, or hop-by-hop security. Data is encrypted in transit over a link, but decrypted into clear text in each node and re-encrypted for the next link.
 
-This means that the Telco, and the Telco customers, must trust each and every node, the staff that has access to the node and the developer and supplier of this node.
+This means that the Telco, and the Telco customers, must trust each and every node, the staff that has access to the node, and the developer and supplier of this node.
 
-Many customers have high requirements on security and are uncomfortable or even legally required not to trust 3rd party networks or cloud storages. Through GDPR et al they are required to maintain full control over their and their clients data, disregarding who they have contracted to store or process that data. 
+Many customers have high requirements on security and are uncomfortable or even legally required not to trust 3rd party networks or cloud storages. Through GDPR they are required to maintain full control over their and their clients data, disregarding who they have contracted to store or process that data. 
 
-HYKER provides a technology where data is protected in an unbroken chain from the data producer to the data consumer, in transit, at rest and over time, independent of network technology. A form of end-to-end encryption technology but with managed trust and data access control. 
+HYKER provides a technology where data is protected in an unbroken chain from the data producer to the data consumer, in transit, at rest, and over time - independent of network technology. It's a form of end-to-end encryption technology but with managed trust and data access control. 
 
 Instead of having trust distributed and delegated as a result of the different network and cloud suppliers models, the customer can take full control over the system and manage trust to best suit the security needs and logics of their application.
 
@@ -143,16 +143,16 @@ A Telco that sells connectivity and capacity to transmit sensitive data for a cl
 
 ##### Some general examples:
 
- * You can differentiate offers on the security level, with a premium communication service that is fully end-to-end protected, even when you share network resources with other Telcos. You can be the most secure communication link that the customer doesnâ€™t have to trust from a data access point of view.
+ * You can differentiate offers on the security level, with a premium communication service that is fully end-to-end protected, even when you share network resources with other Telcos. You can be the most secure communication link that the customer doesn't have to trust from a data access point of view.
  * You can provide service and application developer partners with a new security tool that protects their data through the full data lifecycle.
- * You can offer storage or cloud services to customers with sensitive information. You store their encrypted data, but have no access to keys and thus no access to the data itself.
- * If the Telco provides message broker services, like MQTT servers for IoT, HYKER uniquely adds an end-to-end encryption layer that fully follows the traffic patterns of one-to-many publish-subscribe communication, enabling a data producer to encrypt the data without knowing the recipient(s).
+ * You can offer storage or cloud services to customers with sensitive information. You can store their encrypted data and at the same time have no access to the keys, thus having no access to the data itself.
+ * If the Telco provides message-broker services, like MQTT servers for IoT, HYKER uniquely adds an end-to-end encryption layer that fully follows the traffic patterns of one-to-many publish-subscribe communication, enabling a data producer to encrypt the data without knowing the recipient(s).
 
 ### Logistics
 
-Logistics generates and consumes an abundance of data, from many sources and some of it sensitive or have other business value. Big Data is a huge trend that will have a major impact on logistics business.
+Logistics generates and consumes an abundance of data from many sources. Some of this data is highly sensitive or have other business value. Big Data is a huge trend that will have a major impact on logistics business.
 
-Data is the key success factor of big data and as such, it is of great value. Logistics systems have many endpoints, for instance, tracking devices on trucks, sensors and tracking devices on goods and containers, driver devices (cell phones, tablets) with work orders and reports, etc. There are also central endpoints like dispatch management terminals, analytics software and so on.
+Data is the key success factor of big data, and as such it is of great value. Logistics systems have many endpoints, for instance tracking devices on trucks, sensors and tracking devices on goods and containers, driver devices (cell phones, tablets) with work orders and reports, etc. There are also central endpoints like dispatch management terminals, analytics software, and so on.
 
 Since logistics revolves around a hot pot of different systems and actors, data ownership can be a real challenge using traditional security. The important thing is to have control over what data should be accessed by whom and when. Should a customer be able to follow their shipment in real-time? Should trucks be able to communicate directly with other trucks? With some trucks but not all trucks? Organized in groups that change constantly?
 
@@ -160,17 +160,17 @@ Instead of having trust distributed and delegated as a result of the different n
 
 ### Insurance
 
-For an insurance, information about incidents is of importance. This can in some cases pose a privacy intrusion. Let's explore a scenario where HYKER could ease the situation.
+For insurance companies, information about incidents is of importance. This can in some cases pose a privacy intrusion. Let's explore a scenario where HYKER could ease the situation.
 
 The scenario revolves around a car rental service. This car rental service consists of a fleet owner and a bunch of cars. The biggest asset of the rental service is, of course, the cars. Lately, there has been a number of car thefts. In order to deal with the car theft problem, the owner wants to fit the cars with GPS trackers, so that the insurance company can see what has happened. The customer's position being known by the car rental company and the insurance company all the time would be a privacy infringement and would hurt the public image of the company.
 
-The solution can be a trust based security model. In day-to-day use, the car broadcasts an encrypted position that only the driver can read. If a car is stolen, the decryption key can be shared with the insurance company to prove the customers innocence. The decision of when to allow the rental company access to data needs to be in the hand of the customer, otherwise, he or she can never know if the position is private. This is a clear scenario where trust is the main security concern. HYKER easily lets you build systems with a trust model where you can add parties retroactively.
+The solution can be a trust based security model. In day-to-day use, the car broadcasts an encrypted position that only the driver can read. If a car is stolen, the decryption key can be shared with the insurance company by the driver to prove their innocence. The decision of when to allow the rental company access to the data needs to be in the hand of the customer, otherwise, they can never know if their position is private. This is a clear scenario where trust is the main security concern. HYKER easily lets you build systems with a trust model where you can add parties retroactively.
 
 ### Autonomous Vehicles
 
 Autonomous vehicles are going to communicate constantly. The most basic form of communication is car-to-car, where vehicles share things like current speed and direction, known obstacles, etc. with nearby vehicles. If the vehicle is part of a fleet, it will also have to be able to communicate things like current position and payload to a traffic management system.
 
-As this information can be sensitive it is important for the vehicle to be able to set rules for how the data propagates and with whom it is shared. That is, detected obstacles can be public data, position, and heading made available to nearby vehicles, and routing plans are shared only with associated vehicles (e.g. within the same fleet). The groups formed will be of varying dynamicity; the nearby-vehicles-group will be highly dynamic while the fleet remains fairly consistent. The forming of these groups, and the maintaining of a healthy state over time by including and excluding members is a central problem for autonomous systems as agents need to trust the consistency of such groups in order to trust the data.
+As this information can be sensitive it is important for the vehicle to be able to set rules for how the data propagates and with whom it is shared. That is, detected obstacles can be public data, position, and heading made available to nearby vehicles, and routing plans are shared only with associated vehicles (e.g. within the same fleet). The groups formed will be of varying dynamicity; the group of nearby vehicles will be highly dynamic while the fleet remains fairly consistent. The forming of these groups and the maintaining of a healthy state over time by including and excluding members is a central problem for autonomous systems, as agents need to trust the consistency of such groups in order to trust the data.
 
 This is a basic example of the security needed in a self-organizing system where agents can reach consensus in a distributed way. It also suggests how to restrict propagation of sensitive information without human administration.
 
